@@ -69,7 +69,7 @@ export function IntroSection() {
       <div className="absolute inset-0 z-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 grayscale"
-          style={{ backgroundImage: 'url("/images/about-bg.jpg")' }}
+          style={{ backgroundImage: 'url("/images/about-bg.webp")' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#003366] via-transparent to-[#111111]" />
         {/* Subtle grid pattern */}

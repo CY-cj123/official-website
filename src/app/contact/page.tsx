@@ -67,7 +67,7 @@ export default function ContactPage() {
       <section 
         className="relative text-white py-40 px-6 md:px-12 min-h-[500px] flex items-center"
         style={{
-          backgroundImage: 'url("/images/contact-header-bg.jpg")',
+          backgroundImage: 'url("/images/contact-header-bg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

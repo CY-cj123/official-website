@@ -100,8 +100,8 @@ export const translations = {
       honors_title: "Enterprise Honors",
       honors_desc: "Recognition of our commitment to excellence and innovation in municipal engineering.",
       honors_list: [
-        { title: "Outstanding Contribution Award for Municipal Construction in Beach Areas", issuer: "Changyuan Housing and Urban-Rural Development Bureau", date: "December 2021", image: "/images/real/award-contribution.jpg" },
-        { title: "Certificate of Honor (Anti-epidemic Donation)", issuer: "Changyuan Red Cross Society", date: "January 12, 2022", image: "/images/real/award-donation.jpg" }
+        { title: "Outstanding Contribution Award for Municipal Construction in Beach Areas", issuer: "Changyuan Housing and Urban-Rural Development Bureau", date: "December 2021", image: "/images/real/award-contribution.webp" },
+        { title: "Certificate of Honor (Anti-epidemic Donation)", issuer: "Changyuan Red Cross Society", date: "January 12, 2022", image: "/images/real/award-donation.webp" }
       ],
       qualifications_title: "Our Qualifications",
       certs: {
@@ -365,8 +365,8 @@ export const translations = {
       honors_title: "企业荣誉",
       honors_desc: "对我们在市政工程领域追求卓越和创新的认可。",
       honors_list: [
-        { title: "滩区市政建设突出贡献奖", issuer: "长垣市住房和城乡建设局", date: "2021年12月", image: "/images/real/award-contribution.jpg" },
-        { title: "荣誉证书 (抗疫捐赠)", issuer: "长垣市红十字会", date: "2022年1月12日", image: "/images/real/award-donation.jpg" }
+        { title: "滩区市政建设突出贡献奖", issuer: "长垣市住房和城乡建设局", date: "2021年12月", image: "/images/real/award-contribution.webp" },
+        { title: "荣誉证书 (抗疫捐赠)", issuer: "长垣市红十字会", date: "2022年1月12日", image: "/images/real/award-donation.webp" }
       ],
       qualifications_title: "企业资质",
       certs: {

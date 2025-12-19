@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
@@ -22,7 +23,7 @@ export default function AboutPage() {
       <section 
         className="relative text-white py-40 px-6 md:px-12 min-h-[500px] flex items-center overflow-hidden"
         style={{
-          backgroundImage: 'url("/images/about-header-bg.jpg")',
+          backgroundImage: 'url("/images/about-header-bg.webp")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -84,7 +85,13 @@ export default function AboutPage() {
           <div id="profile">
             <h2 className="text-4xl font-bold text-[#003366] mb-8 text-center">{t.about_page.profile_title}</h2>
             <div className="mb-12 overflow-hidden shadow-lg h-[450px] relative">
-               <img src="/images/real/company-signboard.jpg" alt="Company Signboard" className="w-full h-full object-cover object-top" />
+               <Image 
+                 src="/images/real/company-signboard.webp" 
+                 alt="Company Signboard" 
+                 fill
+                 className="object-cover object-top"
+                 sizes="(max-width: 1024px) 100vw, 800px"
+               />
             </div>
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed text-justify">
               <p>
@@ -108,17 +115,28 @@ export default function AboutPage() {
                   <div className="h-64 bg-gray-200 relative overflow-hidden flex items-center justify-center group-hover:bg-[#003366]/5 transition-colors cursor-pointer">
                      <Dialog>
                         <DialogTrigger asChild>
-                           <img 
-                              src="/images/real/cert-business-license.jpg" 
-                              alt={t.about_page.certs.license.title} 
-                              className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
-                           />
+                           <div className="relative w-full h-full p-4">
+                             <Image 
+                                src="/images/real/cert-business-license.webp" 
+                                alt={t.about_page.certs.license.title} 
+                                fill
+                                className="object-contain hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                             />
+                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.license.title}</DialogTitle>
                            </div>
-                           <img src="/images/real/cert-business-license.jpg" alt={t.about_page.certs.license.title} className="w-full h-auto" />
+                           <div className="relative w-full h-[80vh]">
+                             <Image 
+                               src="/images/real/cert-business-license.webp" 
+                               alt={t.about_page.certs.license.title} 
+                               fill
+                               className="object-contain"
+                             />
+                           </div>
                         </DialogContent>
                      </Dialog>
                   </div>
@@ -137,17 +155,28 @@ export default function AboutPage() {
                   <div className="h-64 bg-gray-200 relative overflow-hidden flex items-center justify-center group-hover:bg-[#003366]/5 transition-colors cursor-pointer">
                      <Dialog>
                         <DialogTrigger asChild>
-                           <img 
-                              src="/images/real/cert-qual-2030.jpg" 
-                              alt={t.about_page.certs.qualification.title} 
-                              className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
-                           />
+                           <div className="relative w-full h-full p-4">
+                             <Image 
+                                src="/images/real/cert-qual-2030.webp" 
+                                alt={t.about_page.certs.qualification.title} 
+                                fill
+                                className="object-contain hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                             />
+                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.qualification.title}</DialogTitle>
                            </div>
-                           <img src="/images/real/cert-qual-2030.jpg" alt={t.about_page.certs.qualification.title} className="w-full h-auto" />
+                           <div className="relative w-full h-[80vh]">
+                             <Image 
+                               src="/images/real/cert-qual-2030.webp" 
+                               alt={t.about_page.certs.qualification.title} 
+                               fill
+                               className="object-contain"
+                             />
+                           </div>
                         </DialogContent>
                      </Dialog>
                   </div>
@@ -166,17 +195,28 @@ export default function AboutPage() {
                   <div className="h-64 bg-gray-200 relative overflow-hidden flex items-center justify-center group-hover:bg-[#003366]/5 transition-colors cursor-pointer">
                      <Dialog>
                         <DialogTrigger asChild>
-                           <img 
-                              src="/images/real/cert-safety-2027.jpg" 
-                              alt={t.about_page.certs.safety.title} 
-                              className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
-                           />
+                           <div className="relative w-full h-full p-4">
+                             <Image 
+                                src="/images/real/cert-safety-2027.webp" 
+                                alt={t.about_page.certs.safety.title} 
+                                fill
+                                className="object-contain hover:scale-105 transition-transform duration-500"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                             />
+                           </div>
                         </DialogTrigger>
                         <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.safety.title}</DialogTitle>
                            </div>
-                           <img src="/images/real/cert-safety-2027.jpg" alt={t.about_page.certs.safety.title} className="w-full h-auto" />
+                           <div className="relative w-full h-[80vh]">
+                             <Image 
+                               src="/images/real/cert-safety-2027.webp" 
+                               alt={t.about_page.certs.safety.title} 
+                               fill
+                               className="object-contain"
+                             />
+                           </div>
                         </DialogContent>
                      </Dialog>
                   </div>
@@ -207,10 +247,12 @@ export default function AboutPage() {
                  <div key={index} className="bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                     <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                        {honor.image && (
-                          <img 
+                          <Image 
                             src={honor.image} 
                             alt={honor.title} 
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                            sizes="(max-width: 768px) 100vw, 33vw"
                           />
                        )}
                     </div>

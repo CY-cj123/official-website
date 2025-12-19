@@ -12,58 +12,58 @@ export default function ServicesPage() {
   const services = [
     { 
       id: "building", 
-      icon: "/images/icons/building.png", 
+      icon: "/images/icons/building.webp", 
       title: t.services_page.items.building.title, 
       desc: t.services_page.items.building.desc,
-      image: "/images/services/building.jpg",
+      image: "/images/services/building.webp",
       capabilities: t.services_page.capabilities_list.building
     },
     { 
       id: "municipal", 
-      icon: "/images/icons/road.png", 
+      icon: "/images/icons/road.webp", 
       title: t.services_page.items.municipal.title, 
       desc: t.services_page.items.municipal.desc,
-      image: "/images/services/road.jpg",
+      image: "/images/services/road.webp",
       capabilities: t.services_page.capabilities_list.municipal
     },
     { 
       id: "me", 
-      icon: "/images/icons/me.png", 
+      icon: "/images/icons/me.webp", 
       title: t.services_page.items.me.title, 
       desc: t.services_page.items.me.desc,
-      image: "/images/services/me.jpg",
+      image: "/images/services/me.webp",
       capabilities: t.services_page.capabilities_list.me
     },
     { 
       id: "steel", 
-      icon: "/images/icons/steel.png", 
+      icon: "/images/icons/steel.webp", 
       title: t.services_page.items.steel.title, 
       desc: t.services_page.items.steel.desc,
-      image: "/images/services/steel.jpg",
+      image: "/images/services/steel.webp",
       capabilities: t.services_page.capabilities_list.steel
     },
     { 
       id: "env", 
-      icon: "/images/icons/landscape.png", 
+      icon: "/images/icons/landscape.webp", 
       title: t.services_page.items.env.title, 
       desc: t.services_page.items.env.desc,
-      image: "/images/services/landscape.jpg",
+      image: "/images/services/landscape.webp",
       capabilities: t.services_page.capabilities_list.env
     },
     { 
       id: "lighting", 
-      icon: "/images/icons/lighting.png", 
+      icon: "/images/icons/lighting.webp", 
       title: t.services_page.items.lighting.title, 
       desc: t.services_page.items.lighting.desc,
-      image: "/images/services/lighting.jpg",
+      image: "/images/services/lighting.webp",
       capabilities: t.services_page.capabilities_list.lighting
     },
     { 
       id: "foundation", 
-      icon: "/images/icons/foundation.png", 
+      icon: "/images/icons/foundation.webp", 
       title: t.services_page.items.foundation.title, 
       desc: t.services_page.items.foundation.desc,
-      image: "/images/services/foundation.jpg",
+      image: "/images/services/foundation.webp",
       capabilities: t.services_page.capabilities_list.foundation
     }
   ];
@@ -76,7 +76,7 @@ export default function ServicesPage() {
         <div className="absolute inset-0 z-0">
           <div 
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: 'url("/images/services-header-bg.jpg")' }}
+            style={{ backgroundImage: 'url("/images/services-header-bg.webp")' }}
           />
           <div className="absolute inset-0 bg-[#003366]/85" />
         </div>

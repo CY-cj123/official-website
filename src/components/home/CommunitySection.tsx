@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import { PrimaryButton } from "@/components/ui/primary-button";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -67,12 +68,44 @@ export function CommunitySection() {
             className="grid grid-cols-2 gap-4"
           >
              <div className="space-y-4 mt-8">
-                <img src="/images/services/road.jpg" alt="Construction Worker" className="rounded-xl shadow-lg w-full h-64 object-cover" />
-                <img src="/images/services/bridge.jpg" alt="Engineers" className="rounded-xl shadow-lg w-full h-48 object-cover" />
+                <div className="relative w-full h-64 rounded-xl shadow-lg overflow-hidden">
+                  <Image 
+                    src="/images/services/road.webp" 
+                    alt="Construction Worker" 
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="relative w-full h-48 rounded-xl shadow-lg overflow-hidden">
+                  <Image 
+                    src="/images/services/bridge.webp" 
+                    alt="Engineers" 
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
              </div>
              <div className="space-y-4">
-                <img src="/images/services/building.jpg" alt="Construction Site" className="rounded-xl shadow-lg w-full h-48 object-cover" />
-                <img src="/images/services/water.jpg" alt="Workers on Site" className="rounded-xl shadow-lg w-full h-64 object-cover" />
+                <div className="relative w-full h-48 rounded-xl shadow-lg overflow-hidden">
+                  <Image 
+                    src="/images/services/building.webp" 
+                    alt="Construction Site" 
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="relative w-full h-64 rounded-xl shadow-lg overflow-hidden">
+                  <Image 
+                    src="/images/services/water.webp" 
+                    alt="Workers on Site" 
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 50vw, 25vw"
+                  />
+                </div>
              </div>
           </motion.div>
 

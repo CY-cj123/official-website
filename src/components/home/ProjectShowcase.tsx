@@ -4,17 +4,18 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useLanguage } from "@/context/LanguageContext";
 
 // Consolidated Data - Just listing the few real projects available
 const featuredProjects = [
-  { id: "801", category: "municipal", title: "Water Distribution System Renovation", image: "/images/projects/p801.jpg", desc: "Water supply engineering." },
-  { id: "802", category: "municipal", title: "Rainwater and Sewage Pipeline Project", image: "/images/projects/p802.jpg", desc: "Sewage network engineering." },
-  { id: "803", category: "municipal", title: "Planning Road and Resettlement Road", image: "/images/projects/p803.jpg", desc: "Road construction and supporting engineering." },
-  { id: "804", category: "municipal", title: "Urban Sewage Network Dredging", image: "/images/projects/p804.jpg", desc: "Dredging of urban sewage networks." },
-  { id: "805", category: "municipal", title: "Second Water Plant Backup Water Intake", image: "/images/projects/p805.jpg", desc: "Pipeline and pump house construction." },
+  { id: "801", category: "municipal", title: "Water Distribution System Renovation", image: "/images/projects/p801.webp", desc: "Water supply engineering." },
+  { id: "802", category: "municipal", title: "Rainwater and Sewage Pipeline Project", image: "/images/projects/p802.webp", desc: "Sewage network engineering." },
+  { id: "803", category: "municipal", title: "Planning Road and Resettlement Road", image: "/images/projects/p803.webp", desc: "Road construction and supporting engineering." },
+  { id: "804", category: "municipal", title: "Urban Sewage Network Dredging", image: "/images/projects/p804.webp", desc: "Dredging of urban sewage networks." },
+  { id: "805", category: "municipal", title: "Second Water Plant Backup Water Intake", image: "/images/projects/p805.webp", desc: "Pipeline and pump house construction." },
 ];
 
 export function ProjectShowcase() {
@@ -67,11 +68,12 @@ export function ProjectShowcase() {
                       "relative overflow-hidden bg-gray-100",
                       index === 0 ? "aspect-[16/9] md:aspect-auto md:h-full md:flex-grow" : "aspect-[4/3]"
                     )}>
-                      <img 
+                      <Image 
                         src={`${project.image}`}
                         alt={project.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        loading="lazy"
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                       <div className="absolute bottom-0 left-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

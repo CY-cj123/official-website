@@ -11,7 +11,7 @@ const projects = [
     title: "Building Construction",
     category: "Projects",
     size: "large",
-    image: "/images/services/building.jpg",
+    image: "/images/services/building.webp",
     href: "/services/building"
   },
   {
@@ -19,7 +19,7 @@ const projects = [
     title: "Municipal Public Works",
     category: "Infrastructure",
     size: "small",
-    image: "/images/services/road.jpg",
+    image: "/images/services/road.webp",
     href: "/services/municipal"
   },
   {
@@ -27,7 +27,7 @@ const projects = [
     title: "Electromechanical Engineering",
     category: "Expertise",
     size: "small",
-    image: "/images/services/me.jpg",
+    image: "/images/services/me.webp",
     href: "/services/me"
   },
   {
@@ -35,7 +35,7 @@ const projects = [
     title: "Steel Structure Engineering",
     category: "Structure",
     size: "small",
-    image: "/images/services/steel.jpg",
+    image: "/images/services/steel.webp",
     href: "/services/steel"
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     title: "Environmental Protection",
     category: "Sustainability",
     size: "large",
-    image: "/images/services/landscape.jpg",
+    image: "/images/services/landscape.webp",
     href: "/services/env"
   },
   {
@@ -51,7 +51,7 @@ const projects = [
     title: "Urban & Road Lighting",
     category: "Technology",
     size: "small",
-    image: "/images/services/lighting.jpg",
+    image: "/images/services/lighting.webp",
     href: "/services/lighting"
   },
   {
@@ -59,7 +59,7 @@ const projects = [
     title: "Ground Foundation Engineering",
     category: "Foundation",
     size: "small",
-    image: "/images/services/foundation.jpg",
+    image: "/images/services/foundation.webp",
     href: "/services/foundation"
   }
 ];
