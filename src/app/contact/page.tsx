@@ -65,7 +65,7 @@ export default function ContactPage() {
     <div className="bg-white pt-24 pb-12">
       {/* Header */}
       <section 
-        className="relative text-white py-40 px-6 md:px-12 min-h-[500px] flex items-center"
+        className="relative text-white py-40 px-6 md:px-12 min-h-[600px] flex items-center"
         style={{
           backgroundImage: 'url("/images/contact-header-bg.webp")',
           backgroundSize: 'cover',

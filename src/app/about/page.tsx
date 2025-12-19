@@ -21,7 +21,7 @@ export default function AboutPage() {
     <div className="bg-white pt-24 pb-12">
       {/* Hero Section */}
       <section 
-        className="relative text-white py-40 px-6 md:px-12 min-h-[500px] flex items-center overflow-hidden"
+        className="relative text-white py-40 px-6 md:px-12 min-h-[600px] flex items-center overflow-hidden"
         style={{
           backgroundImage: 'url("/images/about-header-bg.webp")',
           backgroundSize: 'cover',
@@ -84,12 +84,13 @@ export default function AboutPage() {
         <div className="w-full max-w-4xl mx-auto">
           <div id="profile">
             <h2 className="text-4xl font-bold text-[#003366] mb-8 text-center">{t.about_page.profile_title}</h2>
-            <div className="mb-12 overflow-hidden shadow-lg h-[450px] relative">
+            <div className="mb-12 shadow-lg relative">
                <Image 
                  src="/images/real/company-signboard.webp" 
                  alt="Company Signboard" 
-                 fill
-                 className="object-cover object-top"
+                 width={1200}
+                 height={800}
+                 className="w-full h-auto"
                  sizes="(max-width: 1024px) 100vw, 800px"
                />
             </div>

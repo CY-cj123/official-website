@@ -71,7 +71,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-white pt-24 pb-12">
       {/* Header */}
-      <section className="relative bg-[#003366] text-white py-40 px-6 md:px-12 overflow-hidden min-h-[500px] flex items-center">
+      <section className="relative bg-[#003366] text-white py-40 px-6 md:px-12 overflow-hidden min-h-[600px] flex items-center">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <div 
