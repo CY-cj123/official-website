@@ -60,14 +60,10 @@ export function ProjectShowcase() {
                     animate={{ opacity: 1, scale: 1 }}
                     whileHover={{ y: -5 }}
                     className={cn(
-                      "group cursor-pointer bg-white h-full flex flex-col shadow-sm hover:shadow-lg transition-all duration-300 relative",
-                      index === 0 ? "md:col-span-2 md:row-span-2" : ""
+                      "group cursor-pointer bg-white h-full flex flex-col shadow-sm hover:shadow-lg transition-all duration-300 relative"
                     )}
                   >
-                    <div className={cn(
-                      "relative overflow-hidden bg-gray-100",
-                      index === 0 ? "aspect-[16/9] md:aspect-auto md:h-full md:flex-grow" : "aspect-[4/3]"
-                    )}>
+                    <div className="relative overflow-hidden bg-gray-100 aspect-[16/9]">
                       <Image 
                         src={`${project.image}`}
                         alt={project.title} 
@@ -82,27 +78,15 @@ export function ProjectShowcase() {
                          </span>
                       </div>
                     </div>
-                    <div className={cn(
-                      "p-6 flex flex-col justify-between",
-                      index === 0 ? "md:absolute md:bottom-0 md:left-0 md:w-full md:bg-gradient-to-t md:from-black/90 md:to-transparent md:text-white md:border-none" : "flex-grow border border-t-0 border-gray-100"
-                    )}>
+                    <div className="p-6 flex flex-col justify-between flex-grow border border-t-0 border-gray-100">
                        <div>
-                          <div className={cn(
-                            "text-xs font-bold uppercase tracking-wider mb-2",
-                            index === 0 ? "text-[#FFCC00]" : "text-gray-400"
-                          )}>
+                          <div className="text-xs font-bold uppercase tracking-wider mb-2 text-gray-400">
                              {t.project_showcase.categories[project.category as keyof typeof t.project_showcase.categories]}
                           </div>
-                          <h3 className={cn(
-                            "text-xl font-bold leading-tight mb-3 transition-colors",
-                            index === 0 ? "text-white text-2xl md:text-3xl" : "text-gray-900 group-hover:text-[#003366]"
-                          )}>
+                          <h3 className="text-xl font-bold leading-tight mb-3 transition-colors text-gray-900 group-hover:text-[#003366]">
                             {project.title}
                           </h3>
-                          <p className={cn(
-                            "text-sm line-clamp-3 leading-relaxed",
-                            index === 0 ? "text-gray-200 line-clamp-2 md:line-clamp-none md:max-w-2xl" : "text-gray-500"
-                          )}>
+                          <p className="text-sm line-clamp-3 leading-relaxed text-gray-500">
                               {project.desc}
                           </p>
                        </div>
