@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 export default function AboutPage() {
   const { t } = useLanguage();
@@ -114,7 +114,10 @@ export default function AboutPage() {
                               className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
                            />
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none">
+                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                           <div className="sr-only">
+                             <DialogTitle>{t.about_page.certs.license.title}</DialogTitle>
+                           </div>
                            <img src="/images/real/cert-business-license.jpg" alt={t.about_page.certs.license.title} className="w-full h-auto" />
                         </DialogContent>
                      </Dialog>
@@ -140,7 +143,10 @@ export default function AboutPage() {
                               className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
                            />
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none">
+                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                           <div className="sr-only">
+                             <DialogTitle>{t.about_page.certs.qualification.title}</DialogTitle>
+                           </div>
                            <img src="/images/real/cert-qual-2030.jpg" alt={t.about_page.certs.qualification.title} className="w-full h-auto" />
                         </DialogContent>
                      </Dialog>
@@ -166,7 +172,10 @@ export default function AboutPage() {
                               className="w-full h-full object-contain p-4 hover:scale-105 transition-transform duration-500"
                            />
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none">
+                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                           <div className="sr-only">
+                             <DialogTitle>{t.about_page.certs.safety.title}</DialogTitle>
+                           </div>
                            <img src="/images/real/cert-safety-2027.jpg" alt={t.about_page.certs.safety.title} className="w-full h-auto" />
                         </DialogContent>
                      </Dialog>
