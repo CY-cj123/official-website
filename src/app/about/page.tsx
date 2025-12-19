@@ -121,7 +121,7 @@ export default function AboutPage() {
                                 src="/images/real/cert-business-license.webp" 
                                 alt={t.about_page.certs.license.title} 
                                 fill
-                                className="object-contain hover:scale-105 transition-transform duration-500 rotate-90"
+                                className="object-contain hover:scale-105 transition-transform duration-500 -rotate-90"
                                 sizes="(max-width: 768px) 100vw, 33vw"
                              />
                            </div>
@@ -135,7 +135,7 @@ export default function AboutPage() {
                                src="/images/real/cert-business-license.webp" 
                                alt={t.about_page.certs.license.title} 
                                fill
-                               className="object-contain rotate-90"
+                               className="object-contain -rotate-90"
                              />
                            </div>
                         </DialogContent>
