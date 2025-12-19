@@ -113,7 +113,7 @@ export function IntroSection() {
              >
                  <PrimaryButton 
                     href="/about" 
-                    icon={<InfoIcon className="w-5 h-5" />}
+                    icon={<InfoIcon className="w-5 h-5 text-white" />}
                  >
                     {t.common.read_more}
                  </PrimaryButton>
