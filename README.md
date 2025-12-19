@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 长垣市诚建市政建设工程有限公司 (Chengjian Municipal Construction)
 
-## Getting Started
+Official corporate website for **Changyuan Chengjian Municipal Construction Engineering Co., Ltd.** built with Next.js, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## 🏗️ Project Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This is a modern, international-standard corporate website designed to showcase the company's expertise in municipal engineering, construction, and sustainable development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Key Features
+- **Tech Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Framer Motion.
+- **Internationalization**: Full i18n support (English, Chinese Simplified, Chinese Traditional, French, Russian).
+- **Responsive Design**: Mobile-first approach ensuring perfect rendering on all devices.
+- **Modern UI**: "International Industrial" aesthetic with micro-interactions and smooth animations.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/chengjian-municipal.git
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-## Deploy on Vercel
+4. Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/src/app`: App Router pages and layouts.
+- `/src/components`: Reusable UI components (Hero, Navbar, Footer, etc.).
+- `/src/lib/i18n.ts`: Centralized translation files.
+- `/public/images`: Static assets (project photos, certificates).
+
+## 🌍 Deployment
+
+This project is optimized for deployment on **Vercel**.
+
+1. Push code to GitHub.
+2. Import project in Vercel.
+3. Deploy (No special configuration needed).
+
+---
+
+© 2025 Changyuan Chengjian Municipal Construction Engineering Co., Ltd. All rights reserved.
