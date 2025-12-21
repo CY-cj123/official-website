@@ -229,7 +229,7 @@ export default function ContactPage() {
                      </div>
                      <div>
                         <h3 className="font-bold text-[#003366] text-lg mb-1">{t.contact.email}</h3>
-                        <p className="text-gray-600">info@changyuan-group.com</p>
+                        <p className="text-gray-600">contact@cychengjian.com</p>
                      </div>
                   </div>
 
@@ -240,18 +240,6 @@ export default function ContactPage() {
                      <div>
                         <h3 className="font-bold text-[#003366] text-lg mb-1">{t.contact.phone}</h3>
                         <p className="text-gray-600">+86 373 888 8888</p>
-                     </div>
-                  </div>
-
-                  <div className="flex items-start">
-                     <div className="bg-blue-50 p-3 mr-6 text-[#003366]">
-                        <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6">
-                           <path d="M21.35 11.1h-.08c.03-.33.05-.67.05-1.01 0-4.78-4.33-8.66-9.66-8.66C6.33 1.43 2 5.31 2 11.09c0 4.78 4.33 8.66 9.66 8.66.34 0 .67-.02 1.01-.05 1.64 2.78 5.37 3.25 5.37 3.25-.92-1.25-1.37-2.67-1.37-2.67.92-1.08 1.47-2.4 1.47-3.88 0-.11 0-.22-.01-.33zm-14.19-2.83c.72 0 1.31.59 1.31 1.31 0 .72-.59 1.31-1.31 1.31s-1.31-.59-1.31-1.31c0-.72.59-1.31 1.31-1.31zm3.72-3.4c.72 0 1.31.59 1.31 1.31 0 .72-.59 1.31-1.31 1.31s-1.31-.59-1.31-1.31c0-.72.59-1.31 1.31-1.31zm3.72 3.4c.72 0 1.31.59 1.31 1.31 0 .72-.59 1.31-1.31 1.31s-1.31-.59-1.31-1.31c0-.72.59-1.31 1.31-1.31z" />
-                        </svg>
-                     </div>
-                     <div>
-                        <h3 className="font-bold text-[#003366] text-lg mb-1">{t.contact.wechat}</h3>
-                        <p className="text-gray-600">{t.contact.official_account}</p>
                      </div>
                   </div>
                </div>
