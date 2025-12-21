@@ -169,6 +169,29 @@ export const translations = {
         risk_desc: "Proactive identification and mitigation of operational risks."
       }
     },
+    contact_page: {
+      tag: "Contact Us",
+      title: "Let's Build Together",
+      desc: "Have a project in mind? We'd love to hear from you. Reach out to us for inquiries, partnerships, or just to say hello.",
+      get_in_touch: "Get in Touch",
+      send_message: "Send us a Message",
+      success_title: "Message Sent!",
+      success_desc: "Thank you for contacting us. We will get back to you shortly.",
+      form: {
+        first_name: "First Name",
+        last_name: "Last Name",
+        email: "Email",
+        phone: "Phone",
+        message: "Message",
+        first_name_ph: "John",
+        last_name_ph: "Doe",
+        email_ph: "john@example.com",
+        phone_ph: "+1 234 567 8900",
+        message_ph: "Tell us about your project...",
+        sending: "Sending...",
+        send: "Send Message"
+      }
+    },
     footer: {
       company_desc: "Building the foundation for a sustainable future.",
       company_title: "Company",
@@ -432,6 +455,29 @@ export const translations = {
         ethics_desc: "严格的反腐败政策和定期审计。",
         risk_title: "风险管理",
         risk_desc: "主动识别和缓解运营风险。"
+      }
+    },
+    contact_page: {
+      tag: "联系我们",
+      title: "携手共建",
+      desc: "您有项目构想吗？我们期待您的垂询。无论是业务咨询、合作伙伴关系，还是简单的问候，欢迎随时联系我们。",
+      get_in_touch: "保持联系",
+      send_message: "给我们留言",
+      success_title: "信息已发送！",
+      success_desc: "感谢您的联系。我们将尽快回复您。",
+      form: {
+        first_name: "名",
+        last_name: "姓",
+        email: "电子邮箱",
+        phone: "电话",
+        message: "留言内容",
+        first_name_ph: "San",
+        last_name_ph: "Zhang",
+        email_ph: "zhangsan@example.com",
+        phone_ph: "+86 138 0000 0000",
+        message_ph: "请告知我们您的项目需求...",
+        sending: "发送中...",
+        send: "发送信息"
       }
     },
     footer: {

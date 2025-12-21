@@ -9,12 +9,16 @@ interface InteractiveButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEl
   className?: string;
   target?: string;
   rel?: string;
+  icon?: React.ReactNode;
 }
 
-export function InteractiveButton({ text, children, href, className, onClick, style, ...props }: InteractiveButtonProps) {
+export function InteractiveButton({ text, children, href, className, onClick, style, icon, ...props }: InteractiveButtonProps) {
   const content = (
     <span className="text-container">
-      <span className="text flex items-center justify-center gap-2">{children || text}</span>
+      <span className="text flex items-center justify-center gap-2">
+        {icon}
+        {children || text}
+      </span>
     </span>
   );
 
