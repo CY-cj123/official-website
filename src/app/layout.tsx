@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   keywords: "长垣市诚建, 市政建设, 建筑工程, 机电工程, 钢结构工程, 环保工程, 城市照明, 地基基础, Changyuan Chengjian, Municipal Construction",
   verification: {
     other: {
-      // 百度站长平台验证代码
-      "baidu-site-verification": "codeva-wPLgIMaDkT", 
+      // 百度站长平台验证代码，需要替换为您实际获取的代码
+      "baidu-site-verification": "code-placeholder", 
     }
   }
 };
