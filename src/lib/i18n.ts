@@ -186,7 +186,7 @@ export const translations = {
         first_name_ph: "John",
         last_name_ph: "Doe",
         email_ph: "john@example.com",
-        phone_ph: "+1 234 567 8900",
+        phone_ph: "+86 373 887 9569",
         message_ph: "Tell us about your project...",
         sending: "Sending...",
         send: "Send Message"
@@ -223,7 +223,13 @@ export const translations = {
       message: "Message",
       send_btn: "Send Message",
       open_baidu: "Open in Baidu Map",
-      open_gaode: "Open in Gaode Map"
+      open_gaode: "Open in Gaode Map",
+      open_google: "Open in Google Maps",
+      maps: {
+        baidu: "Baidu Map",
+        gaode: "Gaode Map",
+        google: "Google Maps"
+      }
     },
     cookie: {
       text: "We use cookies to ensure you get the best experience on our website. By continuing to visit this site you agree to our use of cookies.",
@@ -474,7 +480,7 @@ export const translations = {
         first_name_ph: "San",
         last_name_ph: "Zhang",
         email_ph: "zhangsan@example.com",
-        phone_ph: "+86 138 0000 0000",
+        phone_ph: "+86 373 887 9569",
         message_ph: "请告知我们您的项目需求...",
         sending: "发送中...",
         send: "发送信息"
@@ -511,7 +517,13 @@ export const translations = {
       message: "留言内容",
       send_btn: "发送信息",
       open_baidu: "在百度地图打开",
-      open_gaode: "在高德地图打开"
+      open_gaode: "在高德地图打开",
+      open_google: "在谷歌地图打开",
+      maps: {
+        baidu: "百度地图",
+        gaode: "高德地图",
+        google: "谷歌地图"
+      }
     },
     cookie: {
       text: "我们使用 cookie 以确保您在我们的网站上获得最佳体验。继续访问本网站即表示您同意我们使用 cookie。",
@@ -747,6 +759,29 @@ export const translations = {
         risk_desc: "主動識別和緩解運營風險。"
       }
     },
+    contact_page: {
+      tag: "聯繫我們",
+      title: "讓我們一起建設",
+      desc: "有項目構想嗎？我們期待您的垂詢。無論是業務諮詢、合作夥伴關係，還是簡單的問候，歡迎隨時聯繫我們。",
+      get_in_touch: "保持聯繫",
+      send_message: "給我們留言",
+      success_title: "信息已發送！",
+      success_desc: "感謝您的聯繫。我們將盡快回复您。",
+      form: {
+        first_name: "名",
+        last_name: "姓",
+        email: "電子郵箱",
+        phone: "電話",
+        message: "留言內容",
+        first_name_ph: "San",
+        last_name_ph: "Zhang",
+        email_ph: "zhangsan@example.com",
+        phone_ph: "+86 373 887 9569",
+        message_ph: "請告知我們您的項目需求...",
+        sending: "發送中...",
+        send: "發送信息"
+      }
+    },
     footer: {
       company_desc: "為可持續的未來奠定基礎。",
       company_title: "公司",
@@ -779,6 +814,7 @@ export const translations = {
       send_btn: "發送信息",
       open_baidu: "在百度地圖打開",
       open_gaode: "在高德地圖打開",
+      open_google: "在谷歌地圖打開",
       maps: {
         baidu: "百度地圖",
         gaode: "高德地圖",
@@ -1043,6 +1079,29 @@ export const translations = {
         ethics_desc: "Politiques anti-corruption strictes et audits réguliers.",
         risk_title: "Gestion des risques",
         risk_desc: "Identification et atténuation proactives des risques opérationnels."
+      }
+    },
+    contact_page: {
+      tag: "Contactez-nous",
+      title: "Bâtissons ensemble",
+      desc: "Vous avez un projet en tête ? Nous serions ravis de vous entendre. Contactez-nous pour des demandes de renseignements, des partenariats ou simplement pour dire bonjour.",
+      get_in_touch: "Prendre contact",
+      send_message: "Envoyez-nous un message",
+      success_title: "Message envoyé !",
+      success_desc: "Merci de nous avoir contactés. Nous vous répondrons sous peu.",
+      form: {
+        first_name: "Prénom",
+        last_name: "Nom",
+        email: "Email",
+        phone: "Téléphone",
+        message: "Message",
+        first_name_ph: "Jean",
+        last_name_ph: "Dupont",
+        email_ph: "jean@example.com",
+        phone_ph: "+86 373 887 9569",
+        message_ph: "Parlez-nous de votre projet...",
+        sending: "Envoi...",
+        send: "Envoyer le message"
       }
     },
     footer: {
@@ -1332,6 +1391,29 @@ export const translations = {
         ethics_desc: "Строгие антикоррупционные политики и регулярные аудиты.",
         risk_title: "Управление рисками",
         risk_desc: "Проактивное выявление и снижение операционных рисков."
+      }
+    },
+    contact_page: {
+      tag: "Свяжитесь с нами",
+      title: "Давайте строить вместе",
+      desc: "У вас есть проект? Мы будем рады услышать вас. Свяжитесь с нами для запросов, партнерства или просто чтобы поздороваться.",
+      get_in_touch: "Связаться с нами",
+      send_message: "Отправить сообщение",
+      success_title: "Сообщение отправлено!",
+      success_desc: "Спасибо, что связались с нами. Мы свяжемся с вами в ближайшее время.",
+      form: {
+        first_name: "Имя",
+        last_name: "Фамилия",
+        email: "Email",
+        phone: "Телефон",
+        message: "Сообщение",
+        first_name_ph: "Иван",
+        last_name_ph: "Иванов",
+        email_ph: "ivan@example.com",
+        phone_ph: "+86 373 887 9569",
+        message_ph: "Расскажите нам о вашем проекте...",
+        sending: "Отправка...",
+        send: "Отправить сообщение"
       }
     },
     footer: {

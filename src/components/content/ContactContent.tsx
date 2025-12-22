@@ -125,12 +125,12 @@ export function ContactContent() {
                   <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t.contact.headquarters}</div>
                   <p className="text-lg text-gray-800 font-medium max-w-xs">{t.footer.address}</p>
                   <a 
-                    href="https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7" 
+                    href={mapUrls[currentMap].search}
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-[#003366] mt-2 font-medium hover:underline"
                   >
-                    {t.contact.open_baidu}
+                    {currentMap === 'baidu' ? t.contact.open_baidu : currentMap === 'gaode' ? t.contact.open_gaode : t.contact.open_google}
                   </a>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export function ContactContent() {
               </div>
             </div>
             
-            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 flex flex-col h-[400px]">
+            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 flex flex-col h-[450px]">
               <div className="flex border-b border-gray-200 bg-gray-100">
                 <button
                   onClick={() => setCurrentMap('gaode')}
