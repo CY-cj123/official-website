@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站项目交接文档</title>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        h1 {
+            color: #003366;
+            border-bottom: 3px solid #003366;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #003366;
+            margin-top: 40px;
+            border-left: 5px solid #003366;
+            padding-left: 15px;
+        }
+        .info-box {
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #c0392b;
+            background-color: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .account-item {
+            margin-bottom: 20px;
+        }
+        .account-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            border-bottom: 1px dashed #0066cc;
+        }
+        a:hover {
+            color: #003366;
+            border-bottom: 1px solid #003366;
+        }
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9em;
+            color: #7f8c8d;
+            text-align: center;
+        }
+        @media print {
+            body { padding: 0; }
+            a { text-decoration: none; color: #000; }
+            a::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>网站项目交接文档</h1>
+
+    <div class="info-box">
+        <p><strong>项目名称：</strong> 长垣市诚建市政建设工程有限公司官方网站</p>
+        <p><strong>网站地址：</strong> <a href="https://cychengjian.com" target="_blank">https://cychengjian.com</a></p>
+        <p><strong>文档生成日期：</strong> 2025年12月22日</p>
+    </div>
+
+    <h2>1. 核心账号与平台管理</h2>
+    <p>为了方便统一管理，项目的所有关键平台（代码、服务器、域名）均使用统一的邮箱账号。</p>
+
+    <div class="info-box">
+        <div class="account-item">
+            <span class="account-label">统一管理邮箱 (用于登录所有平台)</span>
+            changyuanchengjian@163.com
+        </div>
+        <div class="account-item">
+            <span class="account-label">统一管理密码</span>
+            <span class="highlight">Cycj123</span>
+        </div>
+    </div>
+
+    <h3>各平台登录入口</h3>
+    <p>请直接使用上述统一邮箱和密码，或选择“通过 GitHub 登录”：</p>
+    <ul>
+        <li>
+            <strong>代码托管 (GitHub)</strong><br>
+            用于保存网站源代码。<br>
+            <a href="https://github.com/login" target="_blank">点击登录 GitHub</a>
+        </li>
+        <li style="margin-top: 15px;">
+            <strong>服务器部署 (Vercel)</strong><br>
+            用于网站的全球发布和服务器运行。登录时请选择 <em>"Continue with GitHub"</em>。<br>
+            <a href="https://vercel.com/login" target="_blank">点击登录 Vercel</a>
+        </li>
+        <li style="margin-top: 15px;">
+            <strong>域名管理 (Cloudflare)</strong><br>
+            用于管理 cychengjian.com 域名解析和企业邮箱转发。登录时请选择 <em>"Log in with GitHub"</em>。<br>
+            <a href="https://dash.cloudflare.com/login" target="_blank">点击登录 Cloudflare</a>
+        </li>
+    </ul>
+
+    <h2>2. 企业邮箱设置</h2>
+    <p>为了提升品牌形象，我们设置了专业的企业后缀邮箱。</p>
+    
+    <div class="info-box">
+        <p><strong>对外展示邮箱：</strong> contact@cychengjian.com</p>
+        <p><strong>当前状态：</strong> <span class="highlight">只收不发 (Receive Only)</span></p>
+        <p><strong>工作原理：</strong> 客户发给 <em>contact@cychengjian.com</em> 的所有邮件，会自动转发到您的 <em>changyuanchengjian@163.com</em> 邮箱中。您只需登录 163 邮箱即可查看所有业务往来邮件。</p>
+    </div>
+
+    <h2>3. 维护与技术支持</h2>
+    <p>我们深知您对工程业务的专注，因此关于网站的技术细节（如代码部署、服务器配置、SSL证书更新等）已全部由我们托管，<strong>您无需操心任何技术问题</strong>。</p>
+
+    <div class="info-box" style="background-color: #e8f4fd; border-color: #b6e0fe;">
+        <h3 style="margin-top: 0; color: #003366;">🛡️ 包含 1 年全托管维护服务</h3>
+        <p>我们将为您提供为期一年的免费技术维护服务，包括但不限于：</p>
+        <ul>
+            <li>服务器稳定运行监控</li>
+            <li>域名自动续期提醒</li>
+            <li>简单的文字或图片内容更新</li>
+            <li>突发故障的紧急修复</li>
+        </ul>
+        <p style="margin-top: 15px;"><strong>如果有任何问题，或需要修改网站上的任何内容，请直接联系我们处理即可。</strong></p>
+    </div>
+
+    <div class="footer">
+        <p>请妥善保管此文档，建议打印并存档。</p>
+    </div>
+
+</body>
+</html>
