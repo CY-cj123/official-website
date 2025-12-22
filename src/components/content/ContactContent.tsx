@@ -108,7 +108,7 @@ export function ContactContent() {
                   <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t.contact.headquarters}</div>
                   <p className="text-lg text-gray-800 font-medium max-w-xs">{t.footer.address}</p>
                   <a 
-                    href="https://j.map.baidu.com/d9/j3s" 
+                    href="https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-[#003366] mt-2 font-medium hover:underline"
@@ -139,6 +139,19 @@ export function ContactContent() {
                   </a>
                 </div>
               </div>
+            </div>
+            
+            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-[300px] w-full bg-gray-50">
+               <iframe 
+                src="https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7/@12760653.22,4166295.7,13z?querytype=s&da_src=shareurl"
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Company Location"
+              ></iframe>
             </div>
           </motion.div>
 

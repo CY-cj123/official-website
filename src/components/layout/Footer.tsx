@@ -47,16 +47,27 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-blue-400">{t.footer.contact_title}</h3>
             <ul className="space-y-3 text-sm text-slate-300">
               <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-1 text-blue-400" />
-                <span>{t.footer.address}</span>
+                <MapPin className="h-4 w-4 mt-1 text-blue-400 shrink-0" />
+                <a 
+                  href="https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  {t.footer.address}
+                </a>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-blue-400" />
-                <span>contact@cychengjian.com</span>
+                <Mail className="h-4 w-4 text-blue-400 shrink-0" />
+                <a href="mailto:contact@cychengjian.com" className="hover:text-white transition-colors">
+                  contact@cychengjian.com
+                </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-blue-400" />
-                <span>+86 373 888 8888</span>
+                <Phone className="h-4 w-4 text-blue-400 shrink-0" />
+                <a href="tel:+863738888888" className="hover:text-white transition-colors">
+                  +86 373 888 8888
+                </a>
               </li>
             </ul>
           </div>

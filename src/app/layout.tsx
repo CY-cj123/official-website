@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Ma_Shan_Zheng } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,6 +7,13 @@ import { CookieConsent } from "@/components/layout/CookieConsent";
 import { LanguageProvider } from "@/context/LanguageContext";
 
 const inter = Inter({ subsets: ["latin"] });
+const maShanZheng = Ma_Shan_Zheng({ 
+  weight: "400", 
+  subsets: ["latin"],
+  variable: "--font-ma-shan-zheng",
+  display: "swap",
+  preload: false,
+});
 
 export const metadata: Metadata = {
   title: "长垣市诚建市政建设工程有限公司 | Changyuan Chengjian Municipal Construction",
@@ -31,7 +38,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" className="scroll-smooth">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body className={`${inter.className} ${maShanZheng.variable} flex flex-col min-h-screen`}>
         <LanguageProvider>
           <Navbar />
           <main className="flex-grow">

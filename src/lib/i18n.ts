@@ -485,7 +485,7 @@ export const translations = {
       company_title: "公司",
       services_title: "服务",
       contact_title: "联系方式",
-      address: "中国河南省长垣市",
+      address: "河南省长垣市蒲西区卫华大道北17巷9号",
       rights: "版权所有。",
       privacy: "隐私政策",
       terms: "服务条款",

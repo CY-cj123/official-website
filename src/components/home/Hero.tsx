@@ -7,7 +7,8 @@ import { PrimaryButton } from "@/components/ui/primary-button";
 import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const isChinese = language === 'zh-CN' || language === 'zh-TW';
 
   return (
     <section className="relative h-screen w-full flex items-center overflow-hidden">
@@ -37,7 +38,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight tracking-tight max-w-5xl"
+            className={`text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight tracking-tight max-w-5xl ${isChinese ? "font-[family-name:var(--font-ma-shan-zheng)]" : ""}`}
           >
             {t.hero.title} <br/>
             <span className="text-white">{t.hero.titleSuffix}</span>
