@@ -1,12 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { InteractiveButton } from "@/components/ui/interactive-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useLanguage } from "@/context/LanguageContext";
+
+const LeafletMap = dynamic(() => import('@/components/ui/LeafletMap'), {
+  ssr: false,
+  loading: () => <div className="w-full h-full bg-gray-100 animate-pulse flex items-center justify-center text-gray-400">Loading Map...</div>
+});
 
 const MessageIcon = ({ className }: { className?: string }) => (
   <svg 
@@ -29,8 +35,8 @@ const MessageIcon = ({ className }: { className?: string }) => (
 export function ContactContent() {
   const { t } = useLanguage();
   const [formState, setFormState] = useState({
-    firstName: "",
-    lastName: "",
+    name: "",
+    company: "",
     email: "",
     phone: "",
     message: ""
@@ -38,21 +44,10 @@ export function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const [currentMap, setCurrentMap] = useState<'gaode' | 'baidu' | 'google'>('gaode');
-
-  const mapUrls = {
-    gaode: {
-      search: "https://www.amap.com/search?query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
-      embed: "https://www.amap.com/search?query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7"
-    },
-    baidu: {
-      search: "https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
-      embed: "https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7/@12760653.22,4166295.7,13z?querytype=s&da_src=shareurl"
-    },
-    google: {
-      search: "https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
-      embed: "https://maps.google.com/maps?q=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7&t=&z=13&ie=UTF8&iwloc=&output=embed"
-    }
+  const mapLinks = {
+    gaode: "https://www.amap.com/search?query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
+    baidu: "https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
+    google: "https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7"
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -63,7 +58,7 @@ export function ContactContent() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      setFormState({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+      setFormState({ name: "", company: "", email: "", phone: "", message: "" });
       
       setTimeout(() => setIsSubmitted(false), 5000);
     }, 1500);
@@ -124,14 +119,25 @@ export function ContactContent() {
                 <div>
                   <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t.contact.headquarters}</div>
                   <p className="text-lg text-gray-800 font-medium max-w-xs">{t.footer.address}</p>
-                  <a 
-                    href={mapUrls[currentMap].search}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm text-[#003366] mt-2 font-medium hover:underline"
-                  >
-                    {currentMap === 'baidu' ? t.contact.open_baidu : currentMap === 'gaode' ? t.contact.open_gaode : t.contact.open_google}
-                  </a>
+                  <div className="flex flex-wrap gap-4 mt-2">
+                    <a 
+                      href={mapLinks.gaode}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-[#003366] font-medium hover:underline"
+                    >
+                      {t.contact.open_gaode}
+                    </a>
+                    <span className="text-gray-300">|</span>
+                    <a 
+                      href={mapLinks.baidu}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-[#003366] font-medium hover:underline"
+                    >
+                      {t.contact.open_baidu}
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -158,45 +164,11 @@ export function ContactContent() {
               </div>
             </div>
             
-            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 flex flex-col h-[450px]">
-              <div className="flex border-b border-gray-200 bg-gray-100">
-                <button
-                  onClick={() => setCurrentMap('gaode')}
-                  className={`flex-1 py-3 text-sm font-medium transition-colors ${
-                    currentMap === 'gaode' ? 'bg-white text-[#003366] border-t-2 border-t-[#003366]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  {t.contact.maps.gaode}
-                </button>
-                <button
-                  onClick={() => setCurrentMap('google')}
-                  className={`flex-1 py-3 text-sm font-medium transition-colors ${
-                    currentMap === 'google' ? 'bg-white text-[#003366] border-t-2 border-t-[#003366]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  {t.contact.maps.google}
-                </button>
-                <button
-                  onClick={() => setCurrentMap('baidu')}
-                  className={`flex-1 py-3 text-sm font-medium transition-colors ${
-                    currentMap === 'baidu' ? 'bg-white text-[#003366] border-t-2 border-t-[#003366]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  {t.contact.maps.baidu}
-                </button>
-              </div>
-              <div className="flex-1 w-full h-full relative">
-                <iframe 
-                  src={mapUrls[currentMap].embed}
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen
-                  loading="lazy" 
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Company Location"
-                ></iframe>
-              </div>
+            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 flex flex-col h-[450px] relative">
+              <LeafletMap 
+                position={[35.22, 114.63]} 
+                popupText={t.footer.address}
+              />
             </div>
           </motion.div>
 
@@ -224,32 +196,31 @@ export function ContactContent() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label htmlFor="firstName" className="text-sm font-medium text-gray-700">{t.contact_page.form.first_name}</label>
-                    <Input 
-                      id="firstName" 
-                      name="firstName" 
-                      required 
-                      value={formState.firstName}
-                      onChange={handleChange}
-                      placeholder={t.contact_page.form.first_name_ph}
-                      className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="lastName" className="text-sm font-medium text-gray-700">{t.contact_page.form.last_name}</label>
-                    <Input 
-                      id="lastName" 
-                      name="lastName" 
-                      required 
-                      value={formState.lastName}
-                      onChange={handleChange}
-                      placeholder={t.contact_page.form.last_name_ph}
-                      className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
-                    />
-                  </div>
-                </div>
+                <div className="space-y-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-medium text-gray-700">{t.contact_page.form.name}</label>
+                <Input 
+                  id="name" 
+                  name="name" 
+                  required 
+                  value={formState.name}
+                  onChange={handleChange}
+                  placeholder={t.contact_page.form.name_ph}
+                  className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="company" className="text-sm font-medium text-gray-700">{t.contact_page.form.company}</label>
+                <Input 
+                  id="company" 
+                  name="company" 
+                  value={formState.company}
+                  onChange={handleChange}
+                  placeholder={t.contact_page.form.company_ph}
+                  className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
+                />
+              </div>
+            </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
