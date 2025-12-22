@@ -477,11 +477,11 @@ export const translations = {
         email: "电子邮箱",
         phone: "电话",
         message: "留言内容",
-        first_name_ph: "San",
-        last_name_ph: "Zhang",
-        email_ph: "zhangsan@example.com",
-        phone_ph: "+86 373 887 9569",
-        message_ph: "请告知我们您的项目需求...",
+        first_name_ph: "",
+        last_name_ph: "",
+        email_ph: "",
+        phone_ph: "",
+        message_ph: "",
         sending: "发送中...",
         send: "发送信息"
       }
@@ -1095,11 +1095,11 @@ export const translations = {
         email: "Email",
         phone: "Téléphone",
         message: "Message",
-        first_name_ph: "Jean",
-        last_name_ph: "Dupont",
-        email_ph: "jean@example.com",
-        phone_ph: "+86 373 887 9569",
-        message_ph: "Parlez-nous de votre projet...",
+        first_name_ph: "",
+        last_name_ph: "",
+        email_ph: "",
+        phone_ph: "",
+        message_ph: "",
         sending: "Envoi...",
         send: "Envoyer le message"
       }
