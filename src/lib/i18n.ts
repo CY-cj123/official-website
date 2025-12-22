@@ -778,7 +778,12 @@ export const translations = {
       message: "留言內容",
       send_btn: "發送信息",
       open_baidu: "在百度地圖打開",
-      open_gaode: "在高德地圖打開"
+      open_gaode: "在高德地圖打開",
+      maps: {
+        baidu: "百度地圖",
+        gaode: "高德地圖",
+        google: "谷歌地圖"
+      }
     },
     cookie: {
       text: "我們使用 cookie 以確保您在我們的網站上獲得最佳體驗。繼續訪問本網站即表示您同意我們使用 cookie。",

@@ -38,6 +38,23 @@ export function ContactContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const [currentMap, setCurrentMap] = useState<'gaode' | 'baidu' | 'google'>('gaode');
+
+  const mapUrls = {
+    gaode: {
+      search: "https://www.amap.com/search?query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
+      embed: "https://www.amap.com/search?query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7"
+    },
+    baidu: {
+      search: "https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
+      embed: "https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7/@12760653.22,4166295.7,13z?querytype=s&da_src=shareurl"
+    },
+    google: {
+      search: "https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
+      embed: "https://maps.google.com/maps?q=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -141,17 +158,45 @@ export function ContactContent() {
               </div>
             </div>
             
-            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm h-[300px] w-full bg-gray-50">
-               <iframe 
-                src="https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7/@12760653.22,4166295.7,13z?querytype=s&da_src=shareurl"
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen
-                loading="lazy" 
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Company Location"
-              ></iframe>
+            <div className="mt-8 rounded-2xl overflow-hidden border border-gray-100 shadow-sm bg-gray-50 flex flex-col h-[400px]">
+              <div className="flex border-b border-gray-200 bg-gray-100">
+                <button
+                  onClick={() => setCurrentMap('gaode')}
+                  className={`flex-1 py-3 text-sm font-medium transition-colors ${
+                    currentMap === 'gaode' ? 'bg-white text-[#003366] border-t-2 border-t-[#003366]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {t.contact.maps.gaode}
+                </button>
+                <button
+                  onClick={() => setCurrentMap('google')}
+                  className={`flex-1 py-3 text-sm font-medium transition-colors ${
+                    currentMap === 'google' ? 'bg-white text-[#003366] border-t-2 border-t-[#003366]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {t.contact.maps.google}
+                </button>
+                <button
+                  onClick={() => setCurrentMap('baidu')}
+                  className={`flex-1 py-3 text-sm font-medium transition-colors ${
+                    currentMap === 'baidu' ? 'bg-white text-[#003366] border-t-2 border-t-[#003366]' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                  }`}
+                >
+                  {t.contact.maps.baidu}
+                </button>
+              </div>
+              <div className="flex-1 w-full h-full relative">
+                <iframe 
+                  src={mapUrls[currentMap].embed}
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0 }} 
+                  allowFullScreen
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Company Location"
+                ></iframe>
+              </div>
             </div>
           </motion.div>
 
