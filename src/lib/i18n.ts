@@ -1135,7 +1135,13 @@ export const translations = {
       message: "Message",
       send_btn: "Envoyer",
       open_baidu: "Ouvrir dans Baidu Map",
-      open_gaode: "Ouvrir dans Gaode Map"
+      open_gaode: "Ouvrir dans Gaode Map",
+      open_google: "Ouvrir dans Google Maps",
+      maps: {
+        baidu: "Baidu Map",
+        gaode: "Gaode Map",
+        google: "Google Maps"
+      }
     },
     cookie: {
       text: "Nous utilisons des cookies pour vous garantir la meilleure expérience sur notre site web. En continuant à visiter ce site, vous acceptez notre utilisation des cookies.",
@@ -1447,7 +1453,13 @@ export const translations = {
       message: "Сообщение",
       send_btn: "Отправить",
       open_baidu: "Открыть в Baidu Map",
-      open_gaode: "Открыть в Gaode Map"
+      open_gaode: "Открыть в Gaode Map",
+      open_google: "Открыть в Google Maps",
+      maps: {
+        baidu: "Baidu Map",
+        gaode: "Gaode Map",
+        google: "Google Maps"
+      }
     },
     cookie: {
       text: "Мы используем файлы cookie, чтобы обеспечить вам лучший опыт на нашем сайте. Продолжая посещать этот сайт, вы соглашаетесь на использование файлов cookie.",
