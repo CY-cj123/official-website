@@ -141,7 +141,7 @@ export function ContactContent() {
                 </div>
                 <div>
                   <h3 className="font-bold text-[#003366] text-lg mb-2">{t.contact.phone}</h3>
-                  <p className="text-gray-600 font-medium">+86 373 888 8888</p>
+                  <p className="text-gray-600 font-medium">+86 373 887 9569</p>
                 </div>
               </div>
 
