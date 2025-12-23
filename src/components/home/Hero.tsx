@@ -8,7 +8,9 @@ import { useLanguage } from "@/context/LanguageContext";
 
 export function Hero() {
   const { t, language } = useLanguage();
-  const isChinese = language === 'zh-CN' || language === 'zh-TW';
+  const isSimplified = language === 'zh-CN';
+  const isTraditional = language === 'zh-TW';
+  const isChinese = isSimplified || isTraditional;
 
   return (
     <section className="relative h-screen w-full flex items-center overflow-hidden">
@@ -38,12 +40,21 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className={`font-bold mb-6 leading-tight tracking-tight max-w-5xl ${isChinese ? "font-[family-name:var(--font-ma-shan-zheng)] text-6xl md:text-8xl lg:text-9xl" : "text-5xl md:text-7xl lg:text-8xl"}`}
+            className={`font-bold mb-6 leading-tight tracking-tight max-w-5xl ${
+              isSimplified 
+                ? "font-[family-name:var(--font-ma-shan-zheng)]" 
+                : isTraditional 
+                  ? "font-artistic-tc" 
+                  : ""
+            } ${
+              isChinese 
+                ? "text-6xl md:text-8xl lg:text-9xl" 
+                : "text-5xl md:text-7xl lg:text-8xl"
+            }`}
           >
             {t.hero.title} <br/>
-            <span className="text-white">{t.hero.titleSuffix}</span>
+            <span className="text-[#FFCC00]">{t.hero.titleSuffix}</span>
           </motion.h1>
-          
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
