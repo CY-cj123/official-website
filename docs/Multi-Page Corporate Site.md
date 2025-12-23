@@ -25,6 +25,20 @@ A modern, international corporate website designed to benchmark against global e
 
 ## 3. Core Architecture & Features
 
+### 3.0 SEO Optimization
+**📊 Dedicated SEO Documentation**: See `docs/SEO-Optimization.md` for comprehensive SEO strategy and monitoring.
+
+**Current SEO Features**:
+- ✅ Meta tags (Title, Description, Keywords)
+- ✅ Open Graph tags (needs og:image)
+- ✅ JSON-LD Structured Data (ConstructionBusiness)
+- ✅ Sitemap.xml and robots.txt
+- ✅ Baidu verification (codeva-wPLgIMaDkT)
+- ⚠️ Google Search Console verification pending
+- ⚠️ Multilingual hreflang tags pending
+
+**Important**: Always update `docs/SEO-Optimization.md` after any SEO-related changes.
+
 ### 3.1 Internationalization (i18n)
 - **Supported Languages**: 
   - English (`en`)

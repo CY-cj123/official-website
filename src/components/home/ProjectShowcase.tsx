@@ -59,9 +59,24 @@ export function ProjectShowcase() {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView="auto"
+            slidesPerView={1.8}
+            spaceBetween={30}
             loop={true}
             loopAdditionalSlides={3}
+            breakpoints={{
+              640: {
+                slidesPerView: 1.8,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2.2,
+                spaceBetween: 30,
+              },
+              1024: {
+                slidesPerView: 2.5,
+                spaceBetween: 40,
+              },
+            }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -70,8 +85,8 @@ export function ProjectShowcase() {
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 250,
-              modifier: 1.2,
+              depth: 280,
+              modifier: 1,
               slideShadows: false,
             }}
             pagination={{
@@ -83,7 +98,7 @@ export function ProjectShowcase() {
             className="project-showcase-swiper !pb-16"
           >
             {projects.map((project, index) => (
-              <SwiperSlide key={project.id} className="!w-[85vw] md:!w-[700px] lg:!w-[800px]">
+              <SwiperSlide key={project.id}>
                 <Dialog>
                   <DialogTrigger asChild>
                     <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer group shadow-2xl">
