@@ -105,7 +105,7 @@ export function ProjectShowcase() {
                       {/* Background Image */}
                       <img
                         src={project.image}
-                        alt={project.title}
+                        alt={`${project.title} - 长垣诚建市政工程项目案例`}
                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
 
@@ -156,7 +156,7 @@ export function ProjectShowcase() {
                       <div className="h-64 lg:h-full bg-gray-100 relative min-h-[300px]">
                         <img
                           src={project.image}
-                          alt={project.title}
+                          alt={`${project.title} - 长垣市诚建市政建设工程有限公司项目详情`}
                           className="absolute inset-0 w-full h-full object-cover"
                         />
                       </div>

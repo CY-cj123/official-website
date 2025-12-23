@@ -85,7 +85,7 @@ export function AboutContent() {
             <div className="mb-12 shadow-lg relative">
                <Image 
                  src="/images/real/company-signboard.webp" 
-                 alt="Company Signboard" 
+                 alt="长垣市诚建市政建设工程有限公司办公大楼招牌 - Company Signboard" 
                  width={1200}
                  height={800}
                  className="w-full h-auto"

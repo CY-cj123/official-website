@@ -161,7 +161,7 @@ export function ServicesContent() {
 
                 <PrimaryButton 
                    href={`/projects?category=${service.id}`}
-                   icon={<img src={service.icon} alt="" className="w-7 h-7 object-contain brightness-0 invert" />}
+                   icon={<img src={service.icon} alt={`${service.title}图标`} className="w-7 h-7 object-contain brightness-0 invert" />}
                 >
                    {t.services_page.view_projects}
                 </PrimaryButton>
@@ -177,7 +177,7 @@ export function ServicesContent() {
               >
                  <img 
                     src={service.image} 
-                    alt={service.title} 
+                    alt={`${service.title} - 长垣诚建专业施工服务`} 
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-[#003366]/40 to-transparent" />

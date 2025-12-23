@@ -80,7 +80,7 @@ export function ProjectsContent() {
                       <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 mb-0">
                         <Image 
                           src={`${project.image}`}
-                          alt={project.title} 
+                          alt={`${project.title} - 长垣诚建市政工程施工案例`} 
                           fill
                           className="object-cover transition-transform duration-700 group-hover:scale-110"
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
