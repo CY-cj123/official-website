@@ -184,35 +184,32 @@ export function ContactContent() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-6">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-sm font-medium text-gray-700">{t.contact_page.form.name}</label>
-                <Input 
-                  id="name" 
-                  name="name" 
-                  required 
-                  value={formState.name}
-                  onChange={handleChange}
-                  placeholder={t.contact_page.form.name_ph}
-                  className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-gray-700">{t.contact_page.form.company}</label>
-                <Input 
-                  id="company" 
-                  name="company" 
-                  value={formState.company}
-                  onChange={handleChange}
-                  placeholder={t.contact_page.form.company_ph}
-                  className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
-                />
-              </div>
-            </div>
+                <div className="space-y-2">
+                  <label htmlFor="name" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.name}</label>
+                  <Input 
+                    id="name" 
+                    name="name" 
+                    required 
+                    value={formState.name}
+                    onChange={handleChange}
+                    className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="company" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.company}</label>
+                  <Input 
+                    id="company" 
+                    name="company" 
+                    value={formState.company}
+                    onChange={handleChange}
+                    className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
+                  />
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="email" className="text-sm font-medium text-gray-700">{t.contact_page.form.email}</label>
+                    <label htmlFor="email" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.email}</label>
                     <Input 
                       id="email" 
                       name="email" 
@@ -220,33 +217,30 @@ export function ContactContent() {
                       required 
                       value={formState.email}
                       onChange={handleChange}
-                      placeholder={t.contact_page.form.email_ph}
                       className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="text-sm font-medium text-gray-700">{t.contact_page.form.phone}</label>
+                    <label htmlFor="phone" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.phone}</label>
                     <Input 
                       id="phone" 
                       name="phone" 
                       type="tel" 
                       value={formState.phone}
                       onChange={handleChange}
-                      placeholder={t.contact_page.form.phone_ph}
                       className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-gray-700">{t.contact_page.form.message}</label>
+                  <label htmlFor="message" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.message}</label>
                   <Textarea 
                     id="message" 
                     name="message" 
                     required 
                     value={formState.message}
                     onChange={handleChange}
-                    placeholder={t.contact_page.form.message_ph}
                     className="min-h-[150px] bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
                   />
                 </div>
