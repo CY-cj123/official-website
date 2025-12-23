@@ -46,13 +46,13 @@ export function PrimaryButton({ children, href, className, onClick, icon, ...pro
   // Icon Box: Dark Blue (#003366) with White Icon
   
   const baseClasses = cn(
-    "relative w-[220px] h-[56px] cursor-pointer flex items-center overflow-hidden border border-white bg-white group transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed",
+    "relative min-w-[220px] w-auto px-6 h-[56px] cursor-pointer flex items-center overflow-hidden border border-white bg-white group transition-all duration-300 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed",
     className
   );
 
   const content = (
     <>
-      <span className="w-full text-center pr-[50px] text-[#003366] font-bold text-lg transition-all duration-300 group-hover:text-transparent group-hover:translate-x-[150%] whitespace-nowrap">
+      <span className="w-full text-center pr-[40px] text-[#003366] font-bold text-lg transition-all duration-300 group-hover:text-transparent group-hover:translate-x-[150%] whitespace-nowrap">
         {children}
       </span>
       <span className="absolute right-0 top-0 h-full w-[60px] bg-[#003366] flex items-center justify-center transition-all duration-500 group-hover:w-full group-active:bg-[#002244]">
