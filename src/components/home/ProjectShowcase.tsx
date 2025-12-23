@@ -61,6 +61,7 @@ export function ProjectShowcase() {
             centeredSlides={true}
             slidesPerView="auto"
             loop={true}
+            loopAdditionalSlides={3}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -69,8 +70,8 @@ export function ProjectShowcase() {
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 200,
-              modifier: 1.5,
+              depth: 250,
+              modifier: 1.2,
               slideShadows: false,
             }}
             pagination={{
@@ -182,17 +183,36 @@ export function ProjectShowcase() {
 
       {/* Custom Swiper Styles */}
       <style jsx global>{`
+        .project-showcase-swiper {
+          padding-left: 5vw !important;
+          padding-right: 5vw !important;
+        }
+
+        .project-showcase-swiper .swiper-wrapper {
+          align-items: center;
+        }
+
         .project-showcase-swiper .swiper-slide {
-          transition: all 0.5s ease;
+          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          opacity: 1 !important;
         }
         
         .project-showcase-swiper .swiper-slide:not(.swiper-slide-active) {
-          filter: brightness(0.6);
+          filter: brightness(0.7);
+          transform: scale(0.85);
         }
         
         .project-showcase-swiper .swiper-slide-active {
           filter: brightness(1);
           z-index: 10;
+          transform: scale(1);
+        }
+
+        /* Ensure side slides are visible */
+        .project-showcase-swiper .swiper-slide-prev,
+        .project-showcase-swiper .swiper-slide-next {
+          opacity: 1 !important;
+          pointer-events: auto;
         }
 
         .project-showcase-swiper .swiper-pagination-bullet {
@@ -207,6 +227,14 @@ export function ProjectShowcase() {
           opacity: 1;
           width: 12px;
           height: 12px;
+        }
+
+        /* Mobile optimization */
+        @media (max-width: 768px) {
+          .project-showcase-swiper {
+            padding-left: 2vw !important;
+            padding-right: 2vw !important;
+          }
         }
       `}</style>
     </section>
