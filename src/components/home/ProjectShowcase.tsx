@@ -47,7 +47,7 @@ export function ProjectShowcase() {
           <span className="text-[#FFCC00] font-bold tracking-widest uppercase mb-4 block text-sm">
             {t.project_showcase.title}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-[#003366] leading-tight max-w-2xl">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#003366] leading-tight max-w-2xl drop-shadow-lg">
             {t.project_showcase.subtitle}
           </h2>
         </div>
@@ -59,20 +59,24 @@ export function ProjectShowcase() {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={1.8}
-            spaceBetween={30}
+            slidesPerView={1}
+            spaceBetween={20}
             loop={true}
-            loopAdditionalSlides={3}
+            loopAdditionalSlides={2}
             breakpoints={{
               640: {
-                slidesPerView: 1.8,
+                slidesPerView: 1.5,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2.2,
+                slidesPerView: 1.8,
                 spaceBetween: 30,
               },
               1024: {
+                slidesPerView: 2.2,
+                spaceBetween: 30,
+              },
+              1280: {
                 slidesPerView: 2.5,
                 spaceBetween: 40,
               },
@@ -82,11 +86,12 @@ export function ProjectShowcase() {
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
+            speed={800}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 280,
-              modifier: 1,
+              depth: 250,
+              modifier: 1.2,
               slideShadows: false,
             }}
             pagination={{
@@ -126,7 +131,7 @@ export function ProjectShowcase() {
                           <div className="text-xs font-bold uppercase tracking-wider mb-2 text-[#FFCC00]">
                             {t.project_showcase.categories[project.category as keyof typeof t.project_showcase.categories]}
                           </div>
-                          <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-4 drop-shadow-md">
+                          <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-4 drop-shadow-lg text-white">
                             {project.title}
                           </h3>
 
