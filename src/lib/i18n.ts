@@ -1415,9 +1415,9 @@ export const translations = {
         message: "Сообщение",
         name_ph: "",
         company_ph: "",
-        email_ph: "ivan@example.com",
-        phone_ph: "+86 373 887 9569",
-        message_ph: "Расскажите нам о вашем проекте...",
+        email_ph: "",
+        phone_ph: "",
+        message_ph: "",
         sending: "Отправка...",
         send: "Отправить сообщение"
       }

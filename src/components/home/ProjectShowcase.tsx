@@ -64,6 +64,8 @@ export function ProjectShowcase() {
             slidesPerView={'auto'}
             initialSlide={1}
             loop={true}
+            observer={true}
+            observeParents={true}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
@@ -78,7 +80,7 @@ export function ProjectShowcase() {
             }}
             pagination={{ clickable: true }}
             modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
-            className="w-full !pb-14"
+            className="w-full !pb-14 min-h-[450px] md:min-h-[550px]"
           >
             {projects.map((project) => (
               <SwiperSlide key={project.id} className="w-[85vw] md:w-[600px] lg:w-[800px] h-[400px] md:h-[500px] relative transition-all duration-300 rounded-2xl overflow-hidden group">
