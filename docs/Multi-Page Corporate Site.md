@@ -113,7 +113,11 @@ A modern, international corporate website designed to benchmark against global e
 ```
 
 ## 6. Current "Watchlist" (Known Issues/Notes)
-1.  **Project Showcase**: The 3D Coverflow effect was unstable. We are currently using a robust CSS Scroll Snap solution.
+1.  **Project Showcase**: 
+    - **Current Implementation (2025-12-23)**: Using Swiper.js Coverflow Effect for center-focused carousel.
+    - **Features**: Auto-play (3s interval), pause on hover, active slide is brightest/largest, side slides are dimmed.
+    - **Technical Details**: Swiper modules enabled: `EffectCoverflow`, `Autoplay`, `Pagination`.
+    - **Previous Attempt**: CSS Scroll Snap was used but lacked the visual impact of center-mode carousel.
 2.  **Map Links**: Ensure the address link in the Footer and Contact page always points to the correct map URL based on the user's preference (or default Gaode).
 3.  **Fonts**: `Ma Shan Zheng` is a variable font but sometimes needs explicit weight definition.
 
