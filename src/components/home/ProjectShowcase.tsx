@@ -59,39 +59,39 @@ export function ProjectShowcase() {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={1}
-            spaceBetween={20}
+            slidesPerView={1.2}
+            spaceBetween={10}
             loop={true}
-            loopAdditionalSlides={2}
+            loopAdditionalSlides={3}
             breakpoints={{
               640: {
-                slidesPerView: 1.5,
+                slidesPerView: 1.6,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 1.8,
-                spaceBetween: 30,
+                slidesPerView: 1.9,
+                spaceBetween: 25,
               },
               1024: {
-                slidesPerView: 2.2,
+                slidesPerView: 2.3,
                 spaceBetween: 30,
               },
               1280: {
-                slidesPerView: 2.5,
-                spaceBetween: 40,
+                slidesPerView: 2.6,
+                spaceBetween: 35,
               },
             }}
             autoplay={{
-              delay: 3000,
+              delay: 3500,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
-            speed={800}
+            speed={900}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 250,
-              modifier: 1.2,
+              depth: 280,
+              modifier: 1,
               slideShadows: false,
             }}
             pagination={{
@@ -126,12 +126,12 @@ export function ProjectShowcase() {
                       />
 
                       {/* Content */}
-                      <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 text-white z-10">
+                      <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 z-10">
                         <div>
-                          <div className="text-xs font-bold uppercase tracking-wider mb-2 text-[#FFCC00]">
+                          <div className="text-xs font-bold uppercase tracking-wider mb-2 !text-[#FFCC00]">
                             {t.project_showcase.categories[project.category as keyof typeof t.project_showcase.categories]}
                           </div>
-                          <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-4 drop-shadow-lg text-white">
+                          <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-4 !text-white [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)]">
                             {project.title}
                           </h3>
 
@@ -204,8 +204,9 @@ export function ProjectShowcase() {
       {/* Custom Swiper Styles */}
       <style jsx global>{`
         .project-showcase-swiper {
-          padding-left: 5vw !important;
-          padding-right: 5vw !important;
+          padding-left: 2vw !important;
+          padding-right: 2vw !important;
+          overflow: visible !important;
         }
 
         .project-showcase-swiper .swiper-wrapper {
@@ -213,13 +214,14 @@ export function ProjectShowcase() {
         }
 
         .project-showcase-swiper .swiper-slide {
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
           opacity: 1 !important;
+          visibility: visible !important;
         }
         
         .project-showcase-swiper .swiper-slide:not(.swiper-slide-active) {
-          filter: brightness(0.7);
-          transform: scale(0.85);
+          filter: brightness(0.6);
+          transform: scale(0.82);
         }
         
         .project-showcase-swiper .swiper-slide-active {
@@ -228,11 +230,18 @@ export function ProjectShowcase() {
           transform: scale(1);
         }
 
-        /* Ensure side slides are visible */
+        /* Ensure ALL slides are visible, especially side ones */
         .project-showcase-swiper .swiper-slide-prev,
         .project-showcase-swiper .swiper-slide-next {
           opacity: 1 !important;
+          visibility: visible !important;
           pointer-events: auto;
+        }
+
+        /* Make sure duplicate slides (for loop) are also visible */
+        .project-showcase-swiper .swiper-slide-duplicate {
+          opacity: 1 !important;
+          visibility: visible !important;
         }
 
         .project-showcase-swiper .swiper-pagination-bullet {
@@ -252,8 +261,16 @@ export function ProjectShowcase() {
         /* Mobile optimization */
         @media (max-width: 768px) {
           .project-showcase-swiper {
-            padding-left: 2vw !important;
-            padding-right: 2vw !important;
+            padding-left: 1vw !important;
+            padding-right: 1vw !important;
+          }
+        }
+
+        /* Desktop - ensure enough space for side slides */
+        @media (min-width: 1024px) {
+          .project-showcase-swiper {
+            padding-left: 3vw !important;
+            padding-right: 3vw !important;
           }
         }
       `}</style>
