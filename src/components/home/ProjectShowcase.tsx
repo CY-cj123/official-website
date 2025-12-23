@@ -58,32 +58,25 @@ export function ProjectShowcase() {
         {/* Swiper Project Showcase */}
         <div className="w-full py-10">
           <Swiper
-            effect={'coverflow'}
             grabCursor={true}
             centeredSlides={true}
             slidesPerView={'auto'}
+            spaceBetween={20}
             initialSlide={1}
             loop={true}
             observer={true}
             observeParents={true}
-            coverflowEffect={{
-              rotate: 0,
-              stretch: 0,
-              depth: 100,
-              modifier: 2.5,
-              slideShadows: false,
-            }}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
             }}
             pagination={{ clickable: true }}
-            modules={[EffectCoverflow, Pagination, Autoplay, Navigation]}
+            modules={[Pagination, Autoplay, Navigation]}
             className="w-full !pb-14 min-h-[450px] md:min-h-[550px]"
           >
             {projects.map((project) => (
-              <SwiperSlide key={project.id} className="w-[85vw] md:w-[600px] lg:w-[800px] h-[400px] md:h-[500px] relative transition-all duration-300 rounded-2xl overflow-hidden group">
+              <SwiperSlide key={project.id} className="w-[85vw] md:w-[600px] lg:w-[800px] h-[400px] md:h-[500px] relative transition-all duration-300 rounded-2xl overflow-hidden group bg-gray-100">
                  {({ isActive }) => (
                    <Dialog>
                      <DialogTrigger asChild>

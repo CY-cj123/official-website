@@ -112,32 +112,20 @@ export function ContactContent() {
             <h2 className="text-3xl font-bold text-[#003366] mb-8">{t.contact_page.get_in_touch}</h2>
             
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-6">
                 <div className="w-12 h-12 bg-[#003366]/5 rounded-full flex items-center justify-center shrink-0">
                   <MapPin className="w-6 h-6 text-[#003366]" />
                 </div>
                 <div>
-                  <div className="text-xs text-gray-400 uppercase tracking-wider mb-1">{t.contact.headquarters}</div>
-                  <p className="text-lg text-gray-800 font-medium max-w-xs">{t.footer.address}</p>
-                  <div className="flex flex-wrap gap-4 mt-2">
-                    <a 
-                      href={mapLinks.gaode}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-[#003366] font-medium hover:underline"
-                    >
-                      {t.contact.open_gaode}
-                    </a>
-                    <span className="text-gray-300">|</span>
-                    <a 
-                      href={mapLinks.baidu}
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-[#003366] font-medium hover:underline"
-                    >
-                      {t.contact.open_baidu}
-                    </a>
-                  </div>
+                  <h3 className="font-bold text-[#003366] text-lg mb-2">{t.contact.headquarters}</h3>
+                  <a 
+                    href={mapLinks.gaode}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 font-medium hover:text-[#003366] transition-colors"
+                  >
+                    {t.footer.address}
+                  </a>
                 </div>
               </div>
 
