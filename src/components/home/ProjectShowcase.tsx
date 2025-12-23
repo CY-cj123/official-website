@@ -55,42 +55,50 @@ export function ProjectShowcase() {
         {/* Swiper Coverflow Carousel */}
         <div className="w-full py-10 relative">
           <Swiper
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+              // Force autoplay to start
+              if (swiper.autoplay) {
+                swiper.autoplay.start();
+              }
+            }}
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={1.2}
-            spaceBetween={10}
+            slidesPerView={1.4}
+            spaceBetween={15}
             loop={true}
-            loopAdditionalSlides={3}
+            loopAdditionalSlides={2}
+            watchSlidesProgress={true}
             breakpoints={{
               640: {
-                slidesPerView: 1.6,
+                slidesPerView: 1.7,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 1.9,
+                slidesPerView: 2.1,
                 spaceBetween: 25,
               },
               1024: {
-                slidesPerView: 2.3,
+                slidesPerView: 2.4,
                 spaceBetween: 30,
               },
               1280: {
-                slidesPerView: 2.6,
+                slidesPerView: 2.7,
                 spaceBetween: 35,
               },
             }}
             autoplay={{
-              delay: 3500,
+              delay: 3000,
               disableOnInteraction: false,
               pauseOnMouseEnter: true,
+              waitForTransition: true,
             }}
-            speed={900}
+            speed={800}
             coverflowEffect={{
               rotate: 0,
               stretch: 0,
-              depth: 280,
+              depth: 300,
               modifier: 1,
               slideShadows: false,
             }}
@@ -204,44 +212,56 @@ export function ProjectShowcase() {
       {/* Custom Swiper Styles */}
       <style jsx global>{`
         .project-showcase-swiper {
-          padding-left: 2vw !important;
-          padding-right: 2vw !important;
+          padding-left: 1vw !important;
+          padding-right: 1vw !important;
           overflow: visible !important;
         }
 
         .project-showcase-swiper .swiper-wrapper {
           align-items: center;
+          transition-timing-function: linear;
         }
 
         .project-showcase-swiper .swiper-slide {
-          transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: all 0.6s ease-out;
           opacity: 1 !important;
           visibility: visible !important;
+          display: block !important;
         }
         
         .project-showcase-swiper .swiper-slide:not(.swiper-slide-active) {
-          filter: brightness(0.6);
-          transform: scale(0.82);
+          filter: brightness(0.65);
+          transform: scale(0.85);
         }
         
         .project-showcase-swiper .swiper-slide-active {
-          filter: brightness(1);
+          filter: brightness(1) !important;
           z-index: 10;
-          transform: scale(1);
+          transform: scale(1) !important;
         }
 
-        /* Ensure ALL slides are visible, especially side ones */
+        /* Force ALL slides to be visible */
         .project-showcase-swiper .swiper-slide-prev,
         .project-showcase-swiper .swiper-slide-next {
           opacity: 1 !important;
           visibility: visible !important;
-          pointer-events: auto;
+          pointer-events: auto !important;
+          display: block !important;
         }
 
-        /* Make sure duplicate slides (for loop) are also visible */
+        /* Duplicate slides for seamless loop */
         .project-showcase-swiper .swiper-slide-duplicate {
           opacity: 1 !important;
           visibility: visible !important;
+          display: block !important;
+        }
+
+        /* Ensure slides beyond prev/next are also visible */
+        .project-showcase-swiper .swiper-slide-duplicate-prev,
+        .project-showcase-swiper .swiper-slide-duplicate-next {
+          opacity: 1 !important;
+          visibility: visible !important;
+          display: block !important;
         }
 
         .project-showcase-swiper .swiper-pagination-bullet {
@@ -259,18 +279,26 @@ export function ProjectShowcase() {
         }
 
         /* Mobile optimization */
-        @media (max-width: 768px) {
+        @media (max-width: 640px) {
           .project-showcase-swiper {
-            padding-left: 1vw !important;
-            padding-right: 1vw !important;
+            padding-left: 0.5vw !important;
+            padding-right: 0.5vw !important;
+          }
+        }
+
+        /* Tablet */
+        @media (min-width: 641px) and (max-width: 1023px) {
+          .project-showcase-swiper {
+            padding-left: 1.5vw !important;
+            padding-right: 1.5vw !important;
           }
         }
 
         /* Desktop - ensure enough space for side slides */
         @media (min-width: 1024px) {
           .project-showcase-swiper {
-            padding-left: 3vw !important;
-            padding-right: 3vw !important;
+            padding-left: 2vw !important;
+            padding-right: 2vw !important;
           }
         }
       `}</style>

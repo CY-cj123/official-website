@@ -40,7 +40,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className={`font-bold mb-6 leading-tight tracking-tight max-w-5xl !text-white [text-shadow:_0_4px_12px_rgba(0,0,0,0.8)] ${
+            className={`font-bold mb-6 leading-tight tracking-tight max-w-5xl ${
               isSimplified 
                 ? "font-[family-name:var(--font-ma-shan-zheng)]" 
                 : isTraditional 
@@ -52,8 +52,9 @@ export function Hero() {
                 : "text-5xl md:text-7xl lg:text-8xl"
             }`}
           >
-            {t.hero.title} <br/>
-            <span className="!text-[#FFCC00]">{t.hero.titleSuffix}</span>
+            <span className="!text-black [text-shadow:_0_2px_4px_rgba(255,255,255,0.3)]">{t.hero.title}</span>
+            <br/>
+            <span className="!text-white [text-shadow:_0_4px_12px_rgba(0,0,0,0.8)]">{t.hero.titleSuffix}</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
