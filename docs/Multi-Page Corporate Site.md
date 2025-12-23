@@ -1,56 +1,121 @@
-# Role & Objective
-你現在是 **Changyuan Chengjian (长垣诚建)** 的全棧技術合夥人。你的任務是為這家縣級市政工程公司構建一個**面向國際市場、高信任度、現代化**的官方網站。
-目標是擺脫傳統國企的陳舊感，對標 AECOM、Bechtel 等國際工程巨頭，打造“國際化工業風”。
+# Changyuan Chengjian (长垣诚建) Official Website - Project Documentation
 
-# 1. Core Tech Stack (不可協商)
-- **Framework**: Next.js 14+ (App Router) - 確保 SEO 和性能。
-- **Styling**: Tailwind CSS - 追求乾淨、可維護的樣式代碼。
-- **Animation**: Framer Motion - 用於優雅的入場動畫和微交互。
-- **Icons**: Lucide React - 現代簡約的圖標庫。
-- **Language**: TypeScript - 必須使用強類型，減少 Bug。
-- **Asset Management**: 所有靜態圖片存放於 `public/images/`，使用 Next.js `<Image>` 優化。
+> **CRITICAL INSTRUCTION FOR AI AGENTS:**
+> This document is the **single source of truth** for the project.
+> 1. **READ THIS FIRST** before starting any task.
+> 2. **UPDATE THIS DOCUMENT** after every significant change (architecture, tech stack, feature logic).
+> 3. **PUSH TO GITHUB** immediately after every session.
+> 4. **MAINTAIN I18N SYNCHRONIZATION**: Never update text in one language without updating ALL others in `src/lib/i18n.ts`.
 
-# 2. Design & UX Philosophy (設計哲學)
-- **International Industrial Style (國際化工業風)**:
-  - **Primary Color**: 深海藍 (#003366) - 傳遞專業與穩重。
-  - **Secondary Colors**: 乾淨的白色 (#FFFFFF) 與 冷灰色 (#F3F4F6) - 營造現代感與空間感。
-  - **Typography**: Inter 或 Roboto - 適合英文閱讀的現代無襯線字體。
-- **Visual Hierarchy**: 
-  - 增加留白 (Whitespace)，避免信息過載。
-  - 使用大號字體和高對比度來引導視線。
-- **Trust Signals**: 
-  - 在首頁顯著位置展示核心數據（如：年限、項目數）、資質證書、合作夥伴。
-- **Micro-Interactions**: 
-  - 所有按鈕、卡片添加 Hover 效果（如陰影加深、輕微上浮）。
-  - 頁面滾動時元素 Fade-in / Slide-up。
+## 1. Project Overview
+**Changyuan Chengjian Municipal Construction Engineering Co., Ltd.**
+A modern, international corporate website designed to benchmark against global engineering giants (AECOM, Bechtel).
+- **Style**: International Industrial (Deep Blue #003366, White, Cool Gray).
+- **Goal**: High trust, professional, getting rid of traditional SOE (State-Owned Enterprise) "outdated" feel.
 
-# 3. Standard Page Architecture (基於參考架構優化)
-- **Global**: 
-  - **Navbar**: 透明/磨砂玻璃效果，包含 Logo、導航菜單 (Home, About, Services, Projects, ESG, Contact)、語言切換。
-  - **Footer**: 包含版權、快速鏈接、聯繫方式、社交媒體圖標。
+## 2. Tech Stack (Non-Negotiable)
+- **Framework**: Next.js 16 (App Router).
+- **Language**: TypeScript.
+- **Styling**: Tailwind CSS 4.0 (using `@tailwindcss/postcss`).
+- **Animation**: Framer Motion (page transitions, scroll reveals).
+- **Icons**: Lucide React.
+- **Maps**: React Leaflet (OpenStreetMap) + Custom Map Provider Links (Gaode/Baidu/Google).
+- **Internationalization**: Custom React Context (`LanguageContext`) + Dictionary (`src/lib/i18n.ts`).
+  - **NOT** using `next-intl` middleware. State is client-side managed via Context.
 
-- **Home (首頁)**:
-  1.  **Hero Section**: 全屏高質量工程背景圖/視頻 + 強有力的 Slogan + 雙 CTA (View Projects / Contact Us)。
-  2.  **Key Stats (數字展示)**: 現代化的計數器動畫，展示公司實力（如：成立年份、完成項目、專業團隊）。
-  3.  **Services Overview (業務概覽)**: 使用 Bento Grid 或 卡片式佈局，展示核心業務（市政、路橋、房屋建築等）。
-  4.  **Featured Projects (精品案例)**: 網格佈局或輪播，展示代表性工程圖片與簡介。
-  5.  **Safety & ESG (替代原黨建)**: 強調安全標準、可持續發展和企業社會責任。
-  6.  **CTA Section**: 鼓勵訪客發起詢盤。
+## 3. Core Architecture & Features
 
-- **Inner Pages**:
-  - `/about`: 公司簡介、歷史沿革、組織架構。
-  - `/services`: 詳細業務介紹。
-  - `/projects`: 項目作品集。
-  - `/esg`: 安全與可持續發展。
-  - `/contact`: 聯繫表單、地圖、聯繫方式。
+### 3.1 Internationalization (i18n)
+- **Supported Languages**: 
+  - English (`en`)
+  - Simplified Chinese (`zh-CN`)
+  - Traditional Chinese (`zh-TW`)
+  - French (`fr`)
+  - Russian (`ru`)
+- **Data Source**: `src/lib/i18n.ts`
+- **Rule**: All UI text MUST be pulled from `translations[lang]`. Never hardcode text in components.
+- **Font Handling**: 
+  - `Inter` for English/European languages.
+  - `Ma Shan Zheng` (Google Font) for artistic Chinese titles in Hero section.
 
-# 4. Execution Workflow (執行流程)
-1.  **Setup**: 初始化 Next.js 項目，配置 Tailwind 主題顏色 (#003366) 和字體 (Inter)。
-2.  **Scaffold**: 搭建 Layout (Navbar, Footer)。
-3.  **Develop Home**: 
-    - 實現 Hero Section (帶動畫)。
-    - 實現 Stats Section (數字滾動)。
-    - 實現 Services & Projects (現代化佈局)。
-    - 實現 ESG Section。
-4.  **Refine**: 調整間距、字體大小，確保移動端適配完美。
-5.  **Review**: 檢查是否符合“國際化”標準，去除任何“土氣”元素。
+### 3.2 Page Specifics
+
+#### **Home (`/`)**
+1.  **Hero Section**: 
+    - Full-screen background.
+    - Animated text with `Ma Shan Zheng` font for Chinese.
+    - Dual CTA (Contact / Projects).
+2.  **Stats**: Animated counters (Years, Projects, Team).
+3.  **Services**: Grid layout.
+4.  **Featured Projects**: 
+    - **Implementation**: Native CSS Scroll Snap (Horizontal Scroll).
+    - **Note**: Swiper.js was removed due to compatibility issues. Do NOT re-introduce Swiper without thorough testing.
+5.  **ESG**: Safety & Sustainability section.
+
+#### **Contact (`/contact`)**
+1.  **Map Logic**:
+    - **Map Display**: Leaflet (OpenStreetMap) for visual representation.
+    - **Navigation Links**: 
+        - **Default**: Gaode Map (高德地图).
+        - **Switcher**: User can toggle between Gaode, Baidu, and Google Maps.
+        - **Address Link**: The text address links directly to the selected map provider.
+2.  **Contact Form**:
+    - Fields: Name (怎么称呼), Company (所属单位), Phone, Email, Message.
+    - Logic: Client-side validation.
+    - **i18n**: Placeholders must be localized (or empty if preferred by design).
+
+### 3.3 SEO & Metadata
+- **Global Metadata**: Defined in `src/app/layout.tsx`.
+- **Structured Data**: JSON-LD for "ConstructionBusiness" included in `layout.tsx`.
+- **Verification**:
+    - Baidu: `codeva-wPLgIMaDkT` (HTML tag).
+    - Google: Placeholder ready in `layout.tsx`.
+- **Sitemap**: Standard Next.js sitemap generation (if implemented).
+
+## 4. Development Workflow & Rules (STRICT)
+
+### Rule #1: GitHub Synchronization
+- **Action**: `git add . && git commit -m "Description" && git push`
+- **Frequency**: After EVERY logical task completion.
+- **Why**: To prevent data loss and ensure continuity between AI sessions.
+
+### Rule #2: Documentation Updates
+- **Action**: Update `docs/Multi-Page Corporate Site.md` (this file).
+- **When**: Whenever you add a feature, change a library, or modify core logic.
+- **Content**: Reflect the *current* reality, not the *planned* state.
+
+### Rule #3: i18n Integrity
+- **Action**: When adding new text (e.g., a new button):
+  1. Open `src/lib/i18n.ts`.
+  2. Add the key to `en`, `zh-CN`, `zh-TW`, `fr`, and `ru`.
+  3. Use Google Translate if you don't know the language, but **NEVER** leave a key missing in any language.
+- **Why**: Missing keys crash the UI or show ugly fallbacks.
+
+### Rule #4: Verification
+- **Action**: Check `http://localhost:3000` before confirming a task.
+- **Focus**: 
+  - Does the language switch work?
+  - Do images load? (Check `public/images` path).
+  - Is the layout responsive (Mobile vs Desktop)?
+
+## 5. Directory Structure
+```
+/src
+  /app          # App Router pages
+  /components   # React Components
+    /content    # Text-heavy sections (About, Contact info)
+    /home       # Homepage specific widgets (Hero, Showcase)
+    /layout     # Navbar, Footer
+    /ui         # Generic UI (Buttons, Cards - shadcn/ui style)
+  /context      # React Context (LanguageContext)
+  /lib          # Utilities (utils.ts, i18n.ts)
+  /public       # Static assets (images, fonts)
+```
+
+## 6. Current "Watchlist" (Known Issues/Notes)
+1.  **Project Showcase**: The 3D Coverflow effect was unstable. We are currently using a robust CSS Scroll Snap solution.
+2.  **Map Links**: Ensure the address link in the Footer and Contact page always points to the correct map URL based on the user's preference (or default Gaode).
+3.  **Fonts**: `Ma Shan Zheng` is a variable font but sometimes needs explicit weight definition.
+
+---
+*Last Updated: 2025-12-23*
