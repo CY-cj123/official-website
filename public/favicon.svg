@@ -13,7 +13,12 @@
   <path d="M 30 60 A 20 20 0 0 0 50 80" stroke="#FFCC00" stroke-width="10" stroke-linecap="round" fill="none"/>
   <line x1="30" y1="50" x2="30" y2="70" stroke="#FFCC00" stroke-width="10" stroke-linecap="round"/>
   
-  <!-- Letter J - Connected to C -->
-  <path d="M 70 40 L 70 75 Q 70 85, 80 85 L 90 85" stroke="#FFCC00" stroke-width="10" stroke-linecap="round" fill="none"/>
+  <!-- Letter J - Clear J shape with hook -->
+  <!-- Top horizontal line -->
+  <line x1="70" y1="40" x2="85" y2="40" stroke="#FFCC00" stroke-width="10" stroke-linecap="round"/>
+  <!-- Vertical line -->
+  <line x1="77" y1="40" x2="77" y2="80" stroke="#FFCC00" stroke-width="10" stroke-linecap="round"/>
+  <!-- Bottom hook (curved left) -->
+  <path d="M 77 80 Q 70 80, 70 85" stroke="#FFCC00" stroke-width="10" stroke-linecap="round" fill="none"/>
 </svg>
 
