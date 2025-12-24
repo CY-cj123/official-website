@@ -184,28 +184,28 @@ export function ContactContent() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
+              <div className="space-y-2">
                   <label htmlFor="name" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.name}</label>
-                  <Input 
-                    id="name" 
-                    name="name" 
-                    required 
-                    value={formState.name}
-                    onChange={handleChange}
-                    className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
-                  />
-                </div>
+                <Input 
+                  id="name" 
+                  name="name" 
+                  required 
+                  value={formState.name}
+                  onChange={handleChange}
+                  className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
+                />
+              </div>
 
-                <div className="space-y-2">
+              <div className="space-y-2">
                   <label htmlFor="company" className="block text-base font-bold text-[#003366] mb-2">{t.contact_page.form.company}</label>
-                  <Input 
-                    id="company" 
-                    name="company" 
-                    value={formState.company}
-                    onChange={handleChange}
-                    className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
-                  />
-                </div>
+                <Input 
+                  id="company" 
+                  name="company" 
+                  value={formState.company}
+                  onChange={handleChange}
+                  className="bg-white border-gray-200 focus:border-[#003366] focus:ring-[#003366]" 
+                />
+            </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">

@@ -52,9 +52,9 @@ export function Hero() {
                 : "text-5xl md:text-7xl lg:text-8xl"
             }`}
           >
-            <span className="!text-black [text-shadow:_0_2px_4px_rgba(255,255,255,0.3)]">{t.hero.title}</span>
+            <span className="!text-black">{t.hero.title}</span>
             <br/>
-            <span className="!text-white [text-shadow:_0_4px_12px_rgba(0,0,0,0.8)]">{t.hero.titleSuffix}</span>
+            <span className="!text-white">{t.hero.titleSuffix}</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}

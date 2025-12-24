@@ -146,7 +146,7 @@ export function ProjectShowcase() {
                           <div className="text-xs font-bold uppercase tracking-wider mb-2 !text-[#FFCC00]">
                             {t.project_showcase.categories[project.category as keyof typeof t.project_showcase.categories]}
                           </div>
-                          <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-4 !text-white [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)]">
+                          <h3 className="text-2xl md:text-4xl font-bold leading-tight mb-4 !text-white">
                             {project.title}
                           </h3>
 
