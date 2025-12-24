@@ -72,26 +72,27 @@ export function ProjectShowcase() {
             effect="coverflow"
             grabCursor={true}
             centeredSlides={true}
-            slidesPerView={1.4}
-            spaceBetween={15}
+            slidesPerView={2.2}
+            spaceBetween={20}
             loop={true}
-            loopedSlides={5} // Explicitly set looped slides
+            loopAdditionalSlides={3}
+            loopedSlides={baseProjects.length}
             watchSlidesProgress={true}
             breakpoints={{
               640: {
-                slidesPerView: 1.7,
+                slidesPerView: 2.5,
                 spaceBetween: 20,
               },
               768: {
-                slidesPerView: 2.1,
+                slidesPerView: 2.8,
                 spaceBetween: 25,
               },
               1024: {
-                slidesPerView: 2.4,
+                slidesPerView: 3.2,
                 spaceBetween: 30,
               },
               1280: {
-                slidesPerView: 2.7,
+                slidesPerView: 3.5,
                 spaceBetween: 35,
               },
             }}
@@ -118,10 +119,10 @@ export function ProjectShowcase() {
             className="project-showcase-swiper !pb-16"
           >
             {projects.map((project, index) => (
-              <SwiperSlide key={project.uniqueId}>
+              <SwiperSlide key={project.uniqueId} className="!w-[85vw] md:!w-[600px] lg:!w-[700px]">
                 <Dialog>
                   <DialogTrigger asChild>
-                    <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer group shadow-2xl">
+                    <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer group shadow-2xl w-full">
                       {/* Background Image */}
                       <img
                         src={project.image}
@@ -219,14 +220,24 @@ export function ProjectShowcase() {
       {/* Custom Swiper Styles */}
       <style jsx global>{`
         .project-showcase-swiper {
-          padding-left: 1vw !important;
-          padding-right: 1vw !important;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          overflow: visible !important;
+          width: 100% !important;
+        }
+
+        .project-showcase-swiper .swiper-container {
           overflow: visible !important;
         }
 
         .project-showcase-swiper .swiper-wrapper {
           align-items: center;
           transition-timing-function: linear;
+          overflow: visible !important;
+        }
+
+        .project-showcase-swiper .swiper {
+          overflow: visible !important;
         }
 
         .project-showcase-swiper .swiper-slide {
