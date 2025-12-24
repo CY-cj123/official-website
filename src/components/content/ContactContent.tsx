@@ -248,7 +248,7 @@ export function ContactContent() {
                 <InteractiveButton 
                   type="submit" 
                   disabled={isSubmitting}
-                  className="w-full justify-center py-4 text-base !bg-[#003366] !text-white !border-[#003366] [&_.text]:!mix-blend-normal hover:[&_.text]:!text-[#003366]"
+                  className="w-full justify-center py-4 text-base !bg-[#003366] !text-white !border-[#003366] cursor-pointer [&_.text]:!mix-blend-normal hover:!bg-[#FFCC00] hover:[&_.text]:!text-[#003366] hover:[&_.text]:!font-bold transition-all duration-300"
                   icon={<MessageIcon className="w-5 h-5" />}
                 >
                   {isSubmitting ? t.contact_page.form.sending : t.contact_page.form.send}
