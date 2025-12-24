@@ -45,9 +45,9 @@ export function ContactContent() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const mapLinks = {
-    gaode: "https://www.amap.com/search?query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
-    baidu: "https://map.baidu.com/search/%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7",
-    google: "https://www.google.com/maps/search/?api=1&query=%E6%B2%B3%E5%8D%97%E7%9C%81%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E8%A5%BF%E5%8C%BA%E5%8D%AB%E5%8D%8E%E5%A4%A7%E9%81%93%E5%8C%9717%E5%B7%B79%E5%8F%B7"
+    gaode: "https://www.amap.com/search?query=%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E4%B8%9C%E4%B8%9C%E5%86%85%E7%8E%AF388%E5%8F%B7",
+    baidu: "https://map.baidu.com/search/%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E4%B8%9C%E4%B8%9C%E5%86%85%E7%8E%AF388%E5%8F%B7",
+    google: "https://www.google.com/maps/search/?api=1&query=%E9%95%BF%E5%9E%A3%E5%B8%82%E8%92%B2%E4%B8%9C%E4%B8%9C%E5%86%85%E7%8E%AF388%E5%8F%B7"
   };
 
   const handleSubmit = (e: React.FormEvent) => {

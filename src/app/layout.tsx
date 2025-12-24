@@ -108,7 +108,7 @@ export default function RootLayout({
     "foundingDate": "2005-06-03",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "卫华大道北17巷9号",
+      "streetAddress": "蒲东东内环388号",
       "addressLocality": "长垣市",
       "addressRegion": "河南省",
       "postalCode": "453400",
