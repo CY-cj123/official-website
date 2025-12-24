@@ -75,8 +75,7 @@ export function ProjectShowcase() {
             slidesPerView={2.2}
             spaceBetween={20}
             loop={true}
-            loopAdditionalSlides={3}
-            loopedSlides={baseProjects.length}
+            loopAdditionalSlides={5}
             watchSlidesProgress={true}
             breakpoints={{
               640: {
