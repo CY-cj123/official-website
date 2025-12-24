@@ -17,6 +17,15 @@ const maShanZheng = Ma_Shan_Zheng({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cychengjian.com"),
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/logo-cj.svg', type: 'image/svg+xml', sizes: 'any' }
+    ],
+    apple: [
+      { url: '/logo-cj.svg', sizes: '180x180', type: 'image/svg+xml' }
+    ],
+  },
   title: {
     default: "长垣市诚建市政建设工程有限公司 | Changyuan Chengjian Municipal Construction",
     template: "%s | 长垣市诚建市政建设"
@@ -102,7 +111,7 @@ export default function RootLayout({
     "name": "长垣市诚建市政建设工程有限公司",
     "alternateName": "Changyuan Chengjian Municipal Construction Engineering Co., Ltd.",
     "url": "https://www.cychengjian.com",
-    "logo": "https://www.cychengjian.com/images/logo.png",
+    "logo": "https://www.cychengjian.com/logo-cj.svg",
     "image": "https://www.cychengjian.com/images/og-image.jpg",
     "description": "长垣市诚建市政建设工程有限公司是一家专业的市政建设企业，业务涵盖市政公用工程、建筑工程、机电工程、钢结构工程、环保工程、城市照明、地基基础等领域。成立于2005年，致力于提供高质量、安全和可持续的基础设施解决方案。",
     "foundingDate": "2005-06-03",
