@@ -29,7 +29,7 @@ export function ProjectShowcase() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   // Map translations to projects
-  const projects = featuredProjects.map(p => {
+  const baseProjects = featuredProjects.map(p => {
     const data = t.projects_data[p.id as keyof typeof t.projects_data] as any;
     return {
       ...p,
@@ -39,6 +39,13 @@ export function ProjectShowcase() {
       date: data?.date || "2024"
     };
   });
+
+  // Triplicate the projects array to ensure smooth infinite loop
+  // This solves the issue of empty space on the right side
+  const projects = [...baseProjects, ...baseProjects, ...baseProjects].map((p, index) => ({
+    ...p,
+    uniqueId: `${p.id}-${index}` // Ensure unique key for React
+  }));
 
   return (
     <section className="py-24 bg-gray-50 overflow-hidden">
@@ -68,7 +75,7 @@ export function ProjectShowcase() {
             slidesPerView={1.4}
             spaceBetween={15}
             loop={true}
-            loopAdditionalSlides={2}
+            loopedSlides={5} // Explicitly set looped slides
             watchSlidesProgress={true}
             breakpoints={{
               640: {
@@ -107,11 +114,11 @@ export function ProjectShowcase() {
               dynamicBullets: true,
             }}
             modules={[EffectCoverflow, Autoplay, Pagination]}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex % baseProjects.length)}
             className="project-showcase-swiper !pb-16"
           >
             {projects.map((project, index) => (
-              <SwiperSlide key={project.id}>
+              <SwiperSlide key={project.uniqueId}>
                 <Dialog>
                   <DialogTrigger asChild>
                     <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden cursor-pointer group shadow-2xl">
@@ -129,7 +136,7 @@ export function ProjectShowcase() {
                       <div 
                         className="absolute inset-0 bg-black/40 transition-opacity duration-500"
                         style={{ 
-                          opacity: activeIndex === index ? 0 : 1 
+                          opacity: (activeIndex % baseProjects.length) === (index % baseProjects.length) ? 0 : 1 
                         }}
                       />
 
@@ -147,8 +154,8 @@ export function ProjectShowcase() {
                           <div
                             className="transition-all duration-500 overflow-hidden"
                             style={{
-                              maxHeight: activeIndex === index ? "300px" : "0",
-                              opacity: activeIndex === index ? 1 : 0,
+                              maxHeight: (activeIndex % baseProjects.length) === (index % baseProjects.length) ? "300px" : "0",
+                              opacity: (activeIndex % baseProjects.length) === (index % baseProjects.length) ? 1 : 0,
                             }}
                           >
                             <p className="text-gray-200 text-sm md:text-base line-clamp-2 mb-6 max-w-2xl">
