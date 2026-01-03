@@ -124,19 +124,19 @@ export function AboutContent() {
                              />
                            </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
-                           <div className="sr-only">
-                             <DialogTitle>{t.about_page.certs.license.title}</DialogTitle>
-                           </div>
-                           <div className="relative w-full h-[90vh]">
-                             <Image 
-                               src="/images/real/cert-business-license.webp" 
-                               alt={t.about_page.certs.license.title} 
-                               fill
-                               className="object-contain -rotate-90"
-                             />
-                           </div>
-                        </DialogContent>
+                        <DialogContent className="!max-w-[95vw] !w-[95vw] !p-0 !bg-transparent !border-none !shadow-none outline-none" aria-describedby={undefined}>
+                   <div className="sr-only">
+                      <DialogTitle>{t.about_page.certs.license.title}</DialogTitle>
+                   </div>
+                   <div className="relative w-full h-[90vh] flex items-center justify-center pointer-events-none">
+                      <Image 
+                         src="/images/real/cert-business-license.webp" 
+                         alt={t.about_page.certs.license.title} 
+                         fill
+                         className="object-contain -rotate-90 pointer-events-auto"
+                      />
+                   </div>
+                </DialogContent>
                      </Dialog>
                   </div>
                   <div className="p-8 flex-grow">
@@ -164,16 +164,16 @@ export function AboutContent() {
                              />
                            </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                        <DialogContent className="!max-w-[95vw] !w-[95vw] !p-0 !bg-transparent !border-none !shadow-none outline-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.qualification.title}</DialogTitle>
                            </div>
-                           <div className="relative w-full h-[90vh]">
+                           <div className="relative w-full h-[90vh] flex items-center justify-center pointer-events-none">
                              <Image 
                                src="/images/real/cert-qual-2030.webp" 
                                alt={t.about_page.certs.qualification.title} 
                                fill
-                               className="object-contain"
+                               className="object-contain pointer-events-auto"
                              />
                            </div>
                         </DialogContent>
@@ -204,19 +204,19 @@ export function AboutContent() {
                              />
                            </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
-                           <div className="sr-only">
-                             <DialogTitle>{t.about_page.certs.safety.title}</DialogTitle>
-                           </div>
-                           <div className="relative w-full h-[90vh]">
-                             <Image 
-                               src="/images/real/cert-safety-2027.webp" 
-                               alt={t.about_page.certs.safety.title} 
-                               fill
-                               className="object-contain"
-                             />
-                           </div>
-                        </DialogContent>
+                        <DialogContent className="!max-w-[95vw] !w-[95vw] !p-0 !bg-transparent !border-none !shadow-none outline-none" aria-describedby={undefined}>
+                   <div className="sr-only">
+                      <DialogTitle>{t.about_page.certs.safety.title}</DialogTitle>
+                   </div>
+                   <div className="relative w-full h-[90vh] flex items-center justify-center pointer-events-none">
+                      <Image 
+                         src="/images/real/cert-safety-2027.webp" 
+                         alt={t.about_page.certs.safety.title} 
+                         fill
+                         className="object-contain pointer-events-auto"
+                      />
+                   </div>
+                </DialogContent>
                      </Dialog>
                   </div>
                   <div className="p-8 flex-grow">
@@ -258,16 +258,16 @@ export function AboutContent() {
                                 />
                               </div>
                             </DialogTrigger>
-                            <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                            <DialogContent className="!max-w-[95vw] !w-[95vw] !p-0 !bg-transparent !border-none !shadow-none outline-none" aria-describedby={undefined}>
                               <div className="sr-only">
                                 <DialogTitle>{honor.title}</DialogTitle>
                               </div>
-                              <div className="relative w-full h-[90vh]">
+                              <div className="relative w-full h-[90vh] flex items-center justify-center pointer-events-none">
                                 <Image 
                                   src={honor.image} 
                                   alt={honor.title} 
                                   fill
-                                  className="object-contain"
+                                  className="object-contain pointer-events-auto"
                                 />
                               </div>
                             </DialogContent>
