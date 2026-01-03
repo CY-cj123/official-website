@@ -124,11 +124,11 @@ export function AboutContent() {
                              />
                            </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                        <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.license.title}</DialogTitle>
                            </div>
-                           <div className="relative w-full h-[80vh]">
+                           <div className="relative w-full h-[90vh]">
                              <Image 
                                src="/images/real/cert-business-license.webp" 
                                alt={t.about_page.certs.license.title} 
@@ -164,11 +164,11 @@ export function AboutContent() {
                              />
                            </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                        <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.qualification.title}</DialogTitle>
                            </div>
-                           <div className="relative w-full h-[80vh]">
+                           <div className="relative w-full h-[90vh]">
                              <Image 
                                src="/images/real/cert-qual-2030.webp" 
                                alt={t.about_page.certs.qualification.title} 
@@ -204,11 +204,11 @@ export function AboutContent() {
                              />
                            </div>
                         </DialogTrigger>
-                        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                        <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
                            <div className="sr-only">
                              <DialogTitle>{t.about_page.certs.safety.title}</DialogTitle>
                            </div>
-                           <div className="relative w-full h-[80vh]">
+                           <div className="relative w-full h-[90vh]">
                              <Image 
                                src="/images/real/cert-safety-2027.webp" 
                                alt={t.about_page.certs.safety.title} 
@@ -246,13 +246,32 @@ export function AboutContent() {
                  <div key={index} className="bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 group">
                     <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
                        {honor.image && (
-                          <Image 
-                            src={honor.image} 
-                            alt={honor.title} 
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-500" 
-                            sizes="(max-width: 768px) 100vw, 33vw"
-                          />
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <div className="cursor-pointer w-full h-full relative">
+                                <Image 
+                                  src={honor.image} 
+                                  alt={honor.title} 
+                                  fill
+                                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                                  sizes="(max-width: 768px) 100vw, 33vw"
+                                />
+                              </div>
+                            </DialogTrigger>
+                            <DialogContent className="max-w-[95vw] w-full p-0 overflow-hidden bg-transparent border-none shadow-none" aria-describedby={undefined}>
+                              <div className="sr-only">
+                                <DialogTitle>{honor.title}</DialogTitle>
+                              </div>
+                              <div className="relative w-full h-[90vh]">
+                                <Image 
+                                  src={honor.image} 
+                                  alt={honor.title} 
+                                  fill
+                                  className="object-contain"
+                                />
+                              </div>
+                            </DialogContent>
+                          </Dialog>
                        )}
                     </div>
                     <div className="p-6">
