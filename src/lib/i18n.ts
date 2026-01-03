@@ -1000,10 +1000,10 @@ export const translations = {
       awards_label: "Récompenses",
       honors_title: "Honneurs de l'entreprise",
       honors_desc: "Reconnaissance de notre engagement envers l'excellence et l'innovation dans l'ingénierie municipale.",
-      honors_items: {
-        project: "Excellent Projet",
-        association: "Association de Génie Municipal"
-      },
+      honors_list: [
+        { title: "Prix de contribution exceptionnelle à la construction municipale dans les zones côtières", issuer: "Bureau du logement et du développement urbain-rural de Changyuan", date: "Décembre 2021", image: "/images/real/award-contribution.webp" },
+        { title: "Certificat d'honneur (Don anti-épidémique)", issuer: "Société de la Croix-Rouge de Changyuan", date: "12 Janvier 2022", image: "/images/real/award-donation.webp" }
+      ],
       timeline: "Chronologie",
       history_title: "Histoire du développement",
       history_desc: "De nos humbles débuts à un leader de l'industrie, notre parcours est défini par une croissance et une adaptation continues.",
@@ -1318,10 +1318,10 @@ export const translations = {
       awards_label: "Награды",
       honors_title: "Награды предприятия",
       honors_desc: "Признание нашей приверженности к совершенству и инновациям в муниципальном строительстве.",
-      honors_items: {
-        project: "Отличный проект",
-        association: "Ассоциация муниципального строительства"
-      },
+      honors_list: [
+        { title: "Награда за выдающийся вклад в муниципальное строительство в прибрежных районах", issuer: "Бюро жилищного и городского-сельского строительства Чанъюаня", date: "Декабрь 2021", image: "/images/real/award-contribution.webp" },
+        { title: "Почетная грамота (Пожертвование на борьбу с эпидемией)", issuer: "Общество Красного Креста Чанъюаня", date: "12 января 2022", image: "/images/real/award-donation.webp" }
+      ],
       timeline: "Хронология",
       history_title: "История развития",
       history_desc: "От скромных начинаний до лидера отрасли, наш путь определяется постоянным ростом и адаптацией.",
